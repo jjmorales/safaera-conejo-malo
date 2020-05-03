@@ -297,3 +297,5 @@
 "Assets/Scripts/FindClosest.cs"
 "Assets/Scripts/PlayerAttack.cs"
 "Assets/Scripts/PlayerMovement2D.cs"
+"Assets/Scripts/SpaceShipAttack.cs"
+"Assets/Scripts/SpaceShipMovement.cs"
