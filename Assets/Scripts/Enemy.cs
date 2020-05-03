@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     }
 
     void Update(){
-        approachPlayer();
+        //approachPlayer();
     }
 
     public void takeDamage(int damageTaken){
