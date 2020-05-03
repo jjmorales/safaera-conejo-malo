@@ -15,7 +15,16 @@ public class Bullet : MonoBehaviour
     }
     
     void OnTriggerEnter2D(Collider2D col){
-        col.GetComponent<Enemy>().takeDamage(attackDamage);
+        Enemy enemy = col.GetComponent<Enemy>();
+
+
+        // check if collision was on an enemy
+        if(enemy != null){
+            enemy.takeDamage(attackDamage);
+        }
+
+        // insert instantiation of a collision blaster effect here
+        
         Destroy(gameObject);
 
     }
