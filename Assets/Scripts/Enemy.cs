@@ -1,22 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
 
     public int maxHealth = 100;
     public float speed = 2f;
-    public Text points;
     GameObject targetChase;
     int currHealth;
+    PointSystem ps;
+
 
     // Start is called before the first frame update
     void Start()
     {
         targetChase = GameObject.FindGameObjectWithTag("Player");
         currHealth = maxHealth;
+        ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
     
     }
 
@@ -28,26 +29,16 @@ public class Enemy : MonoBehaviour
         currHealth -= damageTaken;
 
         // hurt animation
-
-        addPointsDmg();
         if(currHealth <= 0){
             die();
+        }else{
+            ps.addPointsDmg();
         }
     }
 
     void die(){
-        addPointsKill();
+        ps.addPointsKill();
         Destroy(this.gameObject);
-    }
-
-    void addPointsKill(){
-        int totalPoints = int.Parse(points.text) + 100;
-        points.text = totalPoints.ToString();
-    }
-
-    void addPointsDmg(){
-        int totalPoints = int.Parse(points.text) + 25;
-        points.text = totalPoints.ToString();
     }
 
     void approachPlayer(){
