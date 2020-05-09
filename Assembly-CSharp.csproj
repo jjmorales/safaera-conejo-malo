@@ -45,6 +45,25 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\CodeMonkey\Assets.cs" />
+     <Compile Include="Assets\CodeMonkey\CMDebug.cs" />
+     <Compile Include="Assets\CodeMonkey\MonoBehaviours\CameraFollow.cs" />
+     <Compile Include="Assets\CodeMonkey\MonoBehaviours\CameraFollowSetup.cs" />
+     <Compile Include="Assets\CodeMonkey\MonoBehaviours\ComponentActions.cs" />
+     <Compile Include="Assets\CodeMonkey\MonoBehaviours\PositionRendererSorter.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\Button_Sprite.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\Button_UI.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\FunctionPeriodic.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\FunctionTimer.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\FunctionUpdater.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\UI_Bar.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\UI_BarMultiple.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\UI_Sprite.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\UI_TextComplex.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\UtilsClass.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\World_Bar.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\World_Mesh.cs" />
+     <Compile Include="Assets\CodeMonkey\Utils\World_Sprite.cs" />
      <Compile Include="Assets\Scripts\Bonus.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
@@ -55,8 +74,10 @@
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
      <Compile Include="Assets\Scripts\PointSystem.cs" />
+     <Compile Include="Assets\Scripts\Portal.cs" />
      <Compile Include="Assets\Scripts\SpaceShipAttack.cs" />
      <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
+     <None Include="Assets\CodeMonkey\README.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
