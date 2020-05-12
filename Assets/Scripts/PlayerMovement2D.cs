@@ -12,17 +12,23 @@ public class PlayerMovement2D : MonoBehaviour
     public float runSpeed = 40f;
     bool jump = false;
     bool crouch = false;
+    public string direction;
 
     // Update is called once per frame
     void Update()
     {
+        if(horizontalMove >= 0){
+            direction = "right";
+        }else direction = "left";
+        
+
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         // update animator
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-        animator.SetBool("isCrouched", crouch);
+        //animator.SetBool("isCrouched", crouch);
 
-        if(Input.GetButtonDown("Jump")){
+        if(Input.GetButtonDown("Jump") && !Input.GetKeyDown("q")){
             jump = true;
         }
 

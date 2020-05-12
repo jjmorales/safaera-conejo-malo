@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 
     void Update(){
         // update animator
-        animator.SetFloat("Speed", 1);
+        // animator.SetFloat("Speed", 1);
         approachPlayer();
     }
 

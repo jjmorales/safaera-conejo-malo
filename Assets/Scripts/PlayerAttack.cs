@@ -12,17 +12,36 @@ public class PlayerAttack : MonoBehaviour
     public float attackRangeRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 40;
-
+    public float chargeTime;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown("q")){
-            attack();
+            chargeTime += Time.deltaTime;
+
+            // charge up
+            chargeUpBlaster();
+        }
+        if(Input.GetKeyUp("q")){
+            // shoot
+            shootBlaster();
+            chargeTime = 0;
         }
     }
 
-    void attack(){
+
+    void chargeUpBlaster(){
+        animator.SetBool("ChargeUp", true);
+    }
+
+    void shootBlaster(){
+        animator.SetBool("ChargeUp", false);
+
+        // spawn blaster bullet
+
+    }
+    void meleerangeAuto(){
         // calculate range from closest enemy
         float distance = findClosest.getDistanceFromEnemy(findClosest.getClosestEnemy());
         Debug.Log(distance);
