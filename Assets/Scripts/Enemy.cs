@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
 
     public int maxHealth = 100;
+    public Animator animator;
     public float speed = 2f;
     GameObject targetChase;
     int currHealth;
@@ -22,7 +23,9 @@ public class Enemy : MonoBehaviour
     }
 
     void Update(){
-        //approachPlayer();
+        // update animator
+        animator.SetFloat("Speed", 1);
+        approachPlayer();
     }
 
     public void takeDamage(int damageTaken){
