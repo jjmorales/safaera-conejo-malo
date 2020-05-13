@@ -6,6 +6,7 @@ public class SpaceShipAttack : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject blaster;
+    PlayerAttack playerAttack;
 
     // Update is called once per frame
     void Update()

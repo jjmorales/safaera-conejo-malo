@@ -8,11 +8,16 @@ public class SpaceShipMovement : MonoBehaviour
     public CharacterController2D controller;
     float horizontalMove = 0f;
     public float flightSpeed = 40f;
+    public float clampTop;
+    public float clampBot;
+    public float clampLeft;
+    public float clampRight;
 
     // Update is called once per frame
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * flightSpeed;
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, clampLeft, clampRight), Mathf.Clamp(transform.position.y, clampBot, clampTop));
 
     }
 

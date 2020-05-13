@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\SpaceShipAttack.cs" />
      <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
      <None Include="Assets\CodeMonkey\README.txt" />
+     <None Include="Assets\Sprites\space\space_background_pack\license.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

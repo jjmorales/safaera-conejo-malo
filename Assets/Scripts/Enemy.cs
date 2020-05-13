@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     void Update(){
         // update animator
         // animator.SetFloat("Speed", 1);
-        approachPlayer();
+        // approachPlayer();
     }
 
     public void takeDamage(int damageTaken){

@@ -37,9 +37,6 @@ public class PlayerAttack : MonoBehaviour
 
     void shootBlaster(){
         animator.SetBool("ChargeUp", false);
-
-        // spawn blaster bullet
-
     }
     void meleerangeAuto(){
         // calculate range from closest enemy

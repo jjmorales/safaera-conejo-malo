@@ -9,22 +9,19 @@ public class Bullet : MonoBehaviour
     public int attackDamage = 30;
     public Rigidbody2D rb;
     public string direction;
-    PlayerMovement2D playerMovement;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement2D>();
 
-        direction = playerMovement.direction;
-        
-        rb.velocity = transform.up * speed;
+        if(direction == "Up"){
+            rb.velocity = transform.right * speed;
+        }else{
+            rb.velocity = transform.up * speed;
+        }
      
     }
 
-    void Update(){
-        direction = playerMovement.direction;
-    }
-    
     void OnTriggerEnter2D(Collider2D col){
         Enemy enemy = col.GetComponent<Enemy>();
 
@@ -33,10 +30,9 @@ public class Bullet : MonoBehaviour
         // check if collision was on an enemy
         if(enemy != null){
             enemy.takeDamage(attackDamage);
-            Destroy(gameObject);
         }
 
-
+        Destroy(gameObject);
 
         // insert instantiation of a collision blaster effect here
 
