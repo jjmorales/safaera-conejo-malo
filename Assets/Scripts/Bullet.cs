@@ -26,12 +26,20 @@ public class Bullet : MonoBehaviour
 
         // check if collision was on an enemy
         if(enemy != null){
+            col.GetComponent<SpriteRenderer>().color = Color.red;   // damaged
+            FindObjectOfType<HitStop>().Stop(0.1f);     // hit stop effect
             enemy.takeDamage(attackDamage);
         }
 
-        Destroy(gameObject);
+        StartCoroutine(WaitForDestroy());
 
         // insert instantiation of a collision blaster effect here
+    }
 
+    IEnumerator WaitForDestroy(){
+        while(Time.timeScale != 1){
+            yield return null;
+        }
+        Destroy(gameObject);
     }
 }

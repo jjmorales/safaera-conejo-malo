@@ -38,6 +38,7 @@ public class PlayerAttack : MonoBehaviour
     void shootBlaster(){
         animator.SetBool("ChargeUp", false);
     }
+    
     void meleerangeAuto(){
         // calculate range from closest enemy
         float distance = findClosest.getDistanceFromEnemy(findClosest.getClosestEnemy());

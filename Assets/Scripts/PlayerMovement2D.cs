@@ -21,9 +21,8 @@ public class PlayerMovement2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(this.animator.GetCurrentAnimatorStateInfo(0));
 
-        if(!Input.GetKey("q") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("BenTunn_Shoot")){
+        if(!Input.GetKey("q")){
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
             if(clamp){

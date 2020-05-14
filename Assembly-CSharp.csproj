@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\FindClosest.cs" />
+     <Compile Include="Assets\Scripts\HitStop.cs" />
      <Compile Include="Assets\Scripts\Parallax.cs" />
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
@@ -82,6 +83,9 @@
      <None Include="Assets\Sprites\space\space_background_pack\license.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
@@ -107,17 +111,14 @@
  <Reference Include="Unity.2D.Tilemap.Editor">
  <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Cinemachine">
- <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.cinemachine.editor">
- <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>/Applications/Unity/Hub/Editor/2019.2.20f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

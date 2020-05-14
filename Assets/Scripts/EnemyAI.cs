@@ -12,6 +12,8 @@ public class EnemyAI : MonoBehaviour
 
     public Transform enemySprite;
 
+
+    public Animator animator;
     Path path;
     int currentWaypoint;
     bool endOfPath = false;
@@ -45,8 +47,12 @@ public class EnemyAI : MonoBehaviour
     void FixedUpdate()
     {
 
+
         if(path == null){
+            animator.SetFloat("Speed", 0f);
             return;
+        }else{
+            animator.SetFloat("Speed", 1f);
         }
 
         if(currentWaypoint >= path.vectorPath.Count){

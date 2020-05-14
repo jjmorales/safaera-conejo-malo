@@ -7,10 +7,11 @@ public class Enemy : MonoBehaviour
 {
 
     public int maxHealth = 100;
-    public Animator animator;
     public float speed = 2f;
     int currHealth;
     PointSystem ps;
+ 
+    
 
 
 
@@ -20,18 +21,19 @@ public class Enemy : MonoBehaviour
     {
         currHealth = maxHealth;
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
+
     
     }
 
     void Update(){
-        // update animator
-        // animator.SetFloat("Speed", 1);
-        // approachPlayer();
 
     }
 
     public void takeDamage(int damageTaken){
         currHealth -= damageTaken;
+
+
+        StartCoroutine(RedOnHit()); // damage red tint
 
         // hurt animation
         if(currHealth <= 0){
@@ -44,6 +46,14 @@ public class Enemy : MonoBehaviour
     void die(){
         ps.addPointsKill();
         Destroy(this.gameObject);
+    }
+
+    // tint enemy red on hit
+    IEnumerator RedOnHit(){
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;   // damaged
+        yield return new WaitForSeconds(0.2f);
+        
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal
     }
 
     // void approachPlayer(){

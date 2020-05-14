@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6866872586858191727}
   - component: {fileID: -3090715664625125320}
   - component: {fileID: 5537182063868535413}
+  - component: {fileID: 4957343342140529966}
   m_Layer: 0
   m_Name: blueblast
   m_TagString: Untagged
@@ -157,3 +158,15 @@ MonoBehaviour:
   attackDamage: 30
   rb: {fileID: 6866872586858191727}
   direction: Horz
+--- !u!114 &4957343342140529966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395715660710585333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eec5fc33981643c9a05fa2077907d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
