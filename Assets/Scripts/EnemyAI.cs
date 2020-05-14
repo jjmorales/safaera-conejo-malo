@@ -42,9 +42,9 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
+
         if(path == null){
             return;
         }
