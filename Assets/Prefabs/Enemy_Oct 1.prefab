@@ -138,7 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  animator: {fileID: 8584385052022334354}
   speed: 1
 --- !u!114 &5627297879561743443
 MonoBehaviour:
@@ -152,10 +151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37db3f800deea42c8ad3dff12ab2dcfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 400
+  target: {fileID: 3940311917377626842, guid: a88271f0470014d42b9feee30ab5d9da, type: 3}
+  speed: 300
   nextWaypointDistance: 3
   enemySprite: {fileID: 8584385052022334352}
+  animator: {fileID: 8584385052022334354}
 --- !u!114 &5627297879561743444
 MonoBehaviour:
   m_ObjectHideFlags: 0
