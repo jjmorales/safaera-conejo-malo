@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,15 +9,15 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     public Animator animator;
     public float speed = 2f;
-    GameObject targetChase;
     int currHealth;
     PointSystem ps;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        targetChase = GameObject.FindGameObjectWithTag("Player");
         currHealth = maxHealth;
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
     
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
         // update animator
         // animator.SetFloat("Speed", 1);
         // approachPlayer();
+
     }
 
     public void takeDamage(int damageTaken){
@@ -44,8 +46,8 @@ public class Enemy : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void approachPlayer(){
-        transform.position = Vector2.MoveTowards(transform.position, targetChase.transform.position, Time.deltaTime * speed);
+    // void approachPlayer(){
+    //     transform.position = Vector2.MoveTowards(transform.position, targetChase.transform.position, Time.deltaTime * speed);
 
-    }
+    // }
 }

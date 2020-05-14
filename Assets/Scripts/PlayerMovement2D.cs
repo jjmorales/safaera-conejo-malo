@@ -12,25 +12,22 @@ public class PlayerMovement2D : MonoBehaviour
     public float runSpeed = 40f;
     bool jump = false;
     bool crouch = false;
-    public string direction;
     public float clampTop;
     public float clampBot;
     public float clampLeft;
     public float clampRight;
+    public bool clamp;
 
     // Update is called once per frame
     void Update()
     {
-        if(horizontalMove > 0){
-            direction = "right";
-        }else if(horizontalMove < 0) direction = "left";
-        
-        Debug.Log(direction);
 
         if(!Input.GetKey("q")){
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-        transform.position = new Vector2(Mathf.Clamp(transform.position.x, clampLeft, clampRight), Mathf.Clamp(transform.position.y, clampBot, clampTop));
+            if(clamp){
+            transform.position = new Vector2(Mathf.Clamp(transform.position.x, clampLeft, clampRight), Mathf.Clamp(transform.position.y, clampBot, clampTop));
+            }
         
         }else{
             horizontalMove = 0;

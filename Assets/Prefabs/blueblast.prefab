@@ -156,4 +156,4 @@ MonoBehaviour:
   speed: 20
   attackDamage: 30
   rb: {fileID: 6866872586858191727}
-  direction: Right
+  direction: Horz

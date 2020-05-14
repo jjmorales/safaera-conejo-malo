@@ -13,8 +13,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        if(direction == "Up"){
+        if(direction == "Horz"){
             rb.velocity = transform.right * speed;
         }else{
             rb.velocity = transform.up * speed;
