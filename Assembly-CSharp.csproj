@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\FindClosest.cs" />
      <Compile Include="Assets\Scripts\HitStop.cs" />
      <Compile Include="Assets\Scripts\Parallax.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
      <Compile Include="Assets\Scripts\PointSystem.cs" />
