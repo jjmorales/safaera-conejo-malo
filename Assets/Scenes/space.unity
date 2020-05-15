@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 500
-  animator: {fileID: 619705558}
+  AttackDamage: 20
   speed: 2
 --- !u!1 &700249367
 GameObject:
@@ -829,6 +829,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5128391479422213393}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &903810342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903810334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11df0964174b4f398352a71d9e572c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1365850776}
+  blaster: {fileID: 176898940834185671, guid: 11b56318195194ff9a19308605d7ec51, type: 3}
 --- !u!1 &1271209616
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  animator: {fileID: 1365380605}
+  AttackDamage: 20
   speed: 2
 --- !u!61 &1365380603
 BoxCollider2D:
@@ -1089,6 +1103,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1365850776 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5128391479870510247, guid: ebed073838eca4108b3721b1b8725327,
+    type: 3}
+  m_PrefabInstance: {fileID: 5128391479422213393}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1472180588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,7 +1252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  animator: {fileID: 1489159338}
+  AttackDamage: 20
   speed: 2
 --- !u!61 &1489159336
 BoxCollider2D:
@@ -1512,7 +1532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  animator: {fileID: 1611509465}
+  AttackDamage: 20
   speed: 2
 --- !u!1 &2028958788
 GameObject:
@@ -1628,7 +1648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  animator: {fileID: 2084521937}
+  AttackDamage: 20
   speed: 2
 --- !u!61 &2084521935
 BoxCollider2D:
@@ -1793,7 +1813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  animator: {fileID: 2114594557}
+  AttackDamage: 20
   speed: 2
 --- !u!61 &2114594555
 BoxCollider2D:
@@ -1958,7 +1978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  animator: {fileID: 2115454916}
+  AttackDamage: 20
   speed: 2
 --- !u!61 &2115454914
 BoxCollider2D:
@@ -2333,7 +2353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  animator: {fileID: 2145739089}
+  AttackDamage: 20
   speed: 2
 --- !u!1001 &2319563477425321740
 PrefabInstance:

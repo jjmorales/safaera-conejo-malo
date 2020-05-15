@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     public int attackDamage = 30;
     public Rigidbody2D rb;
     public string direction;
+    public bool HitStop = false;
+    public bool isPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,13 +24,21 @@ public class Bullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        Enemy enemy = col.GetComponent<Enemy>();
 
-        // check if collision was on an enemy
-        if(enemy != null){
-            col.GetComponent<SpriteRenderer>().color = Color.red;   // damaged
-            FindObjectOfType<HitStop>().Stop(0.1f);     // hit stop effect
-            enemy.takeDamage(attackDamage);
+        if(isPlayer){
+            Enemy enemy = col.GetComponent<Enemy>();
+
+            // check if collision was on an enemy
+            if(enemy != null){
+                col.GetComponent<SpriteRenderer>().color = Color.red;   // damaged
+
+                if(HitStop)
+                FindObjectOfType<HitStop>().Stop(0.1f);     // hit stop effect
+
+                enemy.takeDamage(attackDamage);
+            }
+        }else{
+            GameObject.FindObjectOfType<Player>().TakeDamage(attackDamage);
         }
 
         StartCoroutine(WaitForDestroy());

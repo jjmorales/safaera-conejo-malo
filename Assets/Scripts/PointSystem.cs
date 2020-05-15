@@ -32,6 +32,6 @@ public class PointSystem : MonoBehaviour
     }
 
     public void deductPointsDeath(){
-        currentPoints -= 100;
+        currentPoints = currentPoints - 100;
     }
 }

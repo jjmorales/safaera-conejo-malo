@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8327621855242861287}
   - component: {fileID: 6168567037261642419}
   - component: {fileID: 8004237450052421842}
+  - component: {fileID: -152740156534236881}
   m_Layer: 0
   m_Name: blast 1
   m_TagString: Untagged
@@ -136,3 +137,15 @@ MonoBehaviour:
   attackDamage: 30
   rb: {fileID: 8327621855242861287}
   direction: Right
+--- !u!114 &-152740156534236881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176898940834185671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eec5fc33981643c9a05fa2077907d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -324,6 +324,7 @@
 "Assets/Scripts/EnemyAI.cs"
 "Assets/Scripts/EnemySpawner.cs"
 "Assets/Scripts/FindClosest.cs"
+"Assets/Scripts/FireRandom.cs"
 "Assets/Scripts/HitStop.cs"
 "Assets/Scripts/Parallax.cs"
 "Assets/Scripts/Player.cs"

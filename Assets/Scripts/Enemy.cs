@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
 
     public int maxHealth = 100;
+    public int AttackDamage = 20;
     public float speed = 2f;
     int currHealth;
     PointSystem ps;
@@ -23,10 +24,6 @@ public class Enemy : MonoBehaviour
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
 
     
-    }
-
-    void Update(){
-
     }
 
     public void takeDamage(int damageTaken){

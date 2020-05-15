@@ -135,4 +135,6 @@ MonoBehaviour:
   speed: 10
   attackDamage: 30
   rb: {fileID: 8327621855242861287}
-  direction: Right
+  direction: vert
+  HitStop: 0
+  isPlayer: 0

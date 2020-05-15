@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\FindClosest.cs" />
+     <Compile Include="Assets\Scripts\FireRandom.cs" />
      <Compile Include="Assets\Scripts\HitStop.cs" />
      <Compile Include="Assets\Scripts\Parallax.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
