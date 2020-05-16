@@ -32,6 +32,8 @@ public class PointSystem : MonoBehaviour
     }
 
     public void deductPointsDeath(){
-        currentPoints = currentPoints - 100;
+        currentPoints -= 100;
+        points.text = currentPoints.ToString();
+        Debug.Log("called");
     }
 }

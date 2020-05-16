@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     int currHealth;
     PointSystem ps;
     Slider healthBar; 
+    bool immune = false;
     
  
     // Start is called before the first frame update
@@ -21,12 +22,15 @@ public class Player : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col){
-        if(col.gameObject.tag == "Enemy"){
+        if(col.gameObject.tag == "Enemy" && !immune){
             TakeDamage(col.gameObject.GetComponent<Enemy>().AttackDamage);
         }
 
-        if(currHealth <= 0){
-            Die();
+        if(!immune){
+            if(currHealth <= 0){
+                immune = true;
+                Die();
+            }
         }
     }
 
@@ -39,7 +43,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(int dmg){
         currHealth -= dmg;
         healthBar.value = currHealth;
-        StartCoroutine(RedOnHit());
+
+        if(currHealth > 0){
+            StartCoroutine(RedOnHit());
+        }
     }
 
     // tint enemy red on hit

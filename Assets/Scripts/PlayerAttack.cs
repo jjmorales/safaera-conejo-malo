@@ -12,13 +12,11 @@ public class PlayerAttack : MonoBehaviour
     public float attackRangeRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 40;
-    public float chargeTime;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown("q")){
-            chargeTime += Time.deltaTime;
 
             // charge up
             chargeUpBlaster();
@@ -26,7 +24,6 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetKeyUp("q")){
             // shoot
             shootBlaster();
-            chargeTime = 0;
         }
     }
 

@@ -18,10 +18,14 @@ public class FireRandom : MonoBehaviour
         {
             animator.SetBool("Firing", true);
             this.m_FireTime = Time.time + (float)Random.Range(this.m_Offset.x, this.m_Offset.y);
-            Instantiate(m_BulletObject, firePoint.transform.position, firePoint.transform.rotation);
+            Invoke("createBullets",(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length - 0.5f));
         }else{
             animator.SetBool("Firing", false);
         }
+    }
+
+    void createBullets(){
+        Instantiate(m_BulletObject, firePoint.transform.position, firePoint.transform.rotation);
     }
 
   

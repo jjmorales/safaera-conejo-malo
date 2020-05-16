@@ -418,6 +418,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &547723967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 547723968}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &547723968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547723967}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: 0, y: -0.211, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2145739091}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!1 &619705557
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,6 +859,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5128391479422213393}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &903810336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903810334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab5b915a93b1418e9f02f44c3d5498c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!114 &903810342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -952,13 +995,14 @@ GameObject:
   - component: {fileID: 1365380604}
   - component: {fileID: 1365380603}
   - component: {fileID: 1365380602}
+  - component: {fileID: 1365380607}
   m_Layer: 8
   m_Name: headTurret (5)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1365380601
 Transform:
   m_ObjectHideFlags: 0
@@ -1103,6 +1147,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1365380607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365380600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1875c78e06d4391b06241dab6ac6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  firePoint: {fileID: 0}
+  m_BulletObject: {fileID: 0}
+  m_Offset: {x: 0, y: 0}
 --- !u!4 &1365850776 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5128391479870510247, guid: ebed073838eca4108b3721b1b8725327,
@@ -1218,13 +1278,14 @@ GameObject:
   - component: {fileID: 1489159337}
   - component: {fileID: 1489159336}
   - component: {fileID: 1489159335}
+  - component: {fileID: 1489159340}
   m_Layer: 8
   m_Name: headTurret (3)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1489159334
 Transform:
   m_ObjectHideFlags: 0
@@ -1369,6 +1430,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1489159340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489159333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1875c78e06d4391b06241dab6ac6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  firePoint: {fileID: 0}
+  m_BulletObject: {fileID: 0}
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &1611509462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,13 +1460,14 @@ GameObject:
   - component: {fileID: 1611509464}
   - component: {fileID: 1611509463}
   - component: {fileID: 1611509468}
+  - component: {fileID: 1611509469}
   m_Layer: 8
   m_Name: headTurret (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1611509463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1534,6 +1612,22 @@ MonoBehaviour:
   maxHealth: 200
   AttackDamage: 20
   speed: 2
+--- !u!114 &1611509469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611509462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1875c78e06d4391b06241dab6ac6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  firePoint: {fileID: 0}
+  m_BulletObject: {fileID: 0}
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &2028958788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,13 +1708,14 @@ GameObject:
   - component: {fileID: 2084521936}
   - component: {fileID: 2084521935}
   - component: {fileID: 2084521934}
+  - component: {fileID: 2084521939}
   m_Layer: 8
   m_Name: headTurret (4)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2084521933
 Transform:
   m_ObjectHideFlags: 0
@@ -1765,6 +1860,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2084521939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084521932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1875c78e06d4391b06241dab6ac6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  firePoint: {fileID: 0}
+  m_BulletObject: {fileID: 0}
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &2114594552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,13 +1890,14 @@ GameObject:
   - component: {fileID: 2114594556}
   - component: {fileID: 2114594555}
   - component: {fileID: 2114594554}
+  - component: {fileID: 2114594559}
   m_Layer: 8
   m_Name: headTurret (6)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2114594553
 Transform:
   m_ObjectHideFlags: 0
@@ -1930,6 +2042,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2114594559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114594552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1875c78e06d4391b06241dab6ac6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  firePoint: {fileID: 0}
+  m_BulletObject: {fileID: 0}
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &2115454911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,13 +2072,14 @@ GameObject:
   - component: {fileID: 2115454915}
   - component: {fileID: 2115454914}
   - component: {fileID: 2115454913}
+  - component: {fileID: 2115454918}
   m_Layer: 8
   m_Name: headTurret (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2115454912
 Transform:
   m_ObjectHideFlags: 0
@@ -2095,6 +2224,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2115454918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115454911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1875c78e06d4391b06241dab6ac6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  firePoint: {fileID: 0}
+  m_BulletObject: {fileID: 0}
+  m_Offset: {x: 0, y: 0}
 --- !u!1 &2139251302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,6 +2349,7 @@ GameObject:
   - component: {fileID: 2145739093}
   - component: {fileID: 2145739092}
   - component: {fileID: 2145739094}
+  - component: {fileID: 2145739095}
   m_Layer: 8
   m_Name: headTurret
   m_TagString: Enemy
@@ -2287,9 +2433,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145739088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.05, y: -2.44, z: 102.164215}
+  m_LocalPosition: {x: -3.05, y: -2.44, z: 107.37}
   m_LocalScale: {x: 3, y: 3, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 547723968}
   m_Father: {fileID: 841457057}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2355,6 +2502,23 @@ MonoBehaviour:
   maxHealth: 200
   AttackDamage: 20
   speed: 2
+--- !u!114 &2145739095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145739088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1875c78e06d4391b06241dab6ac6e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2145739089}
+  firePoint: {fileID: 547723968}
+  m_BulletObject: {fileID: 1277016659662171014, guid: eedda23aab5d245f39bc64536f9811d5,
+    type: 3}
+  m_Offset: {x: 2, y: 4}
 --- !u!1001 &2319563477425321740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2596,7 +2760,8 @@ PrefabInstance:
       propertyPath: clampTop
       value: 5.55
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5128391481184141729, guid: ebed073838eca4108b3721b1b8725327, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ebed073838eca4108b3721b1b8725327, type: 3}
 --- !u!1001 &5285685136107438321
 PrefabInstance:
