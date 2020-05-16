@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     Slider healthBar; 
     bool immune = false;
     
+    
  
     // Start is called before the first frame update
     void Start()
@@ -22,16 +23,18 @@ public class Player : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col){
+        Debug.Log("hit");
+
         if(col.gameObject.tag == "Enemy" && !immune){
             TakeDamage(col.gameObject.GetComponent<Enemy>().AttackDamage);
         }
 
-        if(!immune){
             if(currHealth <= 0){
                 immune = true;
+                currHealth = 0;
+                healthBar.value = currHealth;
                 Die();
             }
-        }
     }
 
     void Die(){
@@ -49,7 +52,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    // tint enemy red on hit
+    // tint red on hit
     IEnumerator RedOnHit(){
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;   // damaged
         yield return new WaitForSeconds(0.2f);

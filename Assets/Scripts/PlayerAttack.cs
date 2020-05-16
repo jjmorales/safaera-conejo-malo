@@ -16,12 +16,12 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("q")){
+        if(Input.GetButtonDown("Fire1")){
 
             // charge up
             chargeUpBlaster();
         }
-        if(Input.GetKeyUp("q")){
+        if(Input.GetButtonDown("Fire1")){
             // shoot
             shootBlaster();
         }

@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
 
     void die(){
         ps.addPointsKill();
+        this.GetComponent<ConfettiPoints>().spawnDrop();
         Destroy(this.gameObject);
     }
 

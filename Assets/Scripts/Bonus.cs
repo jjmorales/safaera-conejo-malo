@@ -11,12 +11,12 @@ public class Bonus : MonoBehaviour
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
     }
     void OnTriggerEnter2D(Collider2D col){
-        Debug.Log("enter");
-        ps.addPointsBonus();
 
-        // point sound effect
-        
+        if(col.gameObject.tag == "Player"){
+        ps.addPointsBonus();
         Destroy(gameObject);
 
+        // point sound effect
+        }
     }
 }

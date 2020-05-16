@@ -10,8 +10,9 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public string direction;
     public bool HitStop = false;
-    public bool isPlayer;
-
+    public GameObject self;
+    public bool isPlayer = true;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,28 +21,25 @@ public class Bullet : MonoBehaviour
         }else{
             rb.velocity = transform.up * speed;
         }
-     
-    }
 
+        Destroy(self, 3f);
+    }
     void OnTriggerEnter2D(Collider2D col){
 
         if(isPlayer){
-            Enemy enemy = col.GetComponent<Enemy>();
+            Enemy enemy = col.gameObject.GetComponent<Enemy>();
 
             // check if collision was on an enemy
             if(enemy != null){
-                col.GetComponent<SpriteRenderer>().color = Color.red;   // damaged
-
-                if(HitStop)
-                FindObjectOfType<HitStop>().Stop(0.1f);     // hit stop effect
+                if(HitStop) FindObjectOfType<HitStop>().Stop(0.1f);     // hit stop effect
 
                 enemy.takeDamage(attackDamage);
             }
-        }else{
-            GameObject.FindObjectOfType<Player>().TakeDamage(attackDamage);
+        }else if(!isPlayer){
+            if(col.gameObject.tag == "Player") GameObject.FindObjectOfType<Player>().TakeDamage(attackDamage);
         }
 
-        StartCoroutine(WaitForDestroy());
+        if(col.gameObject.tag == "Player" || col.gameObject.tag == "Enemy") StartCoroutine(WaitForDestroy());
 
         // insert instantiation of a collision blaster effect here
     }

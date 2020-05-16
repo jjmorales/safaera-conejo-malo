@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8101168590041658795}
   m_Layer: 8
-  m_Name: DoubleBlast 1
+  m_Name: DoubleBlast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,6 +114,11 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8004237450052421842, guid: 0250dc51326ad493da07056790d6ba46,
+        type: 3}
+      propertyPath: self
+      value: 
+      objectReference: {fileID: 1277016659662171014}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0250dc51326ad493da07056790d6ba46, type: 3}
 --- !u!4 &5220845556071675457 stripped
