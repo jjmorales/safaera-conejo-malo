@@ -75,12 +75,14 @@
      <Compile Include="Assets\Scripts\FindClosest.cs" />
      <Compile Include="Assets\Scripts\FireRandom.cs" />
      <Compile Include="Assets\Scripts\HitStop.cs" />
+     <Compile Include="Assets\Scripts\MultipleRandomSpawn.cs" />
      <Compile Include="Assets\Scripts\Parallax.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
      <Compile Include="Assets\Scripts\PointSystem.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
+     <Compile Include="Assets\Scripts\ShipBehave.cs" />
      <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
      <None Include="Assets\CodeMonkey\README.txt" />
      <None Include="Assets\Sprites\space\space_background_pack\license.txt" />
@@ -670,9 +672,17 @@
       <Project>{F11750E3-516B-9212-3BB4-9F99F1276640}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
+      <Project>{4B239529-19F8-E86E-E32C-BF521817F210}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
       <Project>{15C579C4-4CF2-66A1-3EFF-6CFAD9055FE1}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{18F9F74B-FF29-6BB0-F548-01CE8763B66E}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
