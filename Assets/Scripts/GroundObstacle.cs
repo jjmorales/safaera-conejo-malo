@@ -8,7 +8,7 @@ public class GroundObstacle : MonoBehaviour
     public Sprite deathImage;
     public int slowAmount;
     public int slowTime;
-    public PointSystem pointSystem;
+     PointSystem pointSystem;
     Renderer m_Renderer;
     bool working = true;
 
