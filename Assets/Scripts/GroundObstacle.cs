@@ -17,6 +17,7 @@ public class GroundObstacle : MonoBehaviour
 
     void Start(){
         m_Renderer = GetComponent<Renderer>();
+        pointSystem = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
     }
 
     void Update(){

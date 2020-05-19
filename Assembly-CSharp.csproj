@@ -84,6 +84,7 @@
      <Compile Include="Assets\Scripts\PlayerMovement2D.cs" />
      <Compile Include="Assets\Scripts\PointSystem.cs" />
      <Compile Include="Assets\Scripts\Portal.cs" />
+     <Compile Include="Assets\Scripts\RandomSpawn.cs" />
      <Compile Include="Assets\Scripts\Runner.cs" />
      <Compile Include="Assets\Scripts\ShipBehave.cs" />
      <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
