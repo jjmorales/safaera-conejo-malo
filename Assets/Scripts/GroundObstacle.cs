@@ -23,10 +23,11 @@ public class GroundObstacle : MonoBehaviour
         if(working == false && m_Renderer.isVisible == false) Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D col){
+
         if(!col.GetComponent<Player>().isImmune()){
-            Debug.Log("HIT");
             StartCoroutine(col.GetComponent<Runner>().slowDown(slowAmount, slowTime));
-            StartCoroutine(col.GetComponent<Player>().PlayerImmune());
+            StartCoroutine(col.GetComponent<Player>().RedOnHit());
+            
         }else{
             this.GetComponent<SpriteRenderer>().sprite = deathImage;
             pointSystem.addPointsKill();

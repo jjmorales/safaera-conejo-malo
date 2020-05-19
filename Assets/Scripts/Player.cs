@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col){
-        Debug.Log("hit");
 
         if(col.gameObject.tag == "Enemy" && !immune){
             TakeDamage(col.gameObject.GetComponent<Enemy>().AttackDamage);
@@ -53,7 +52,7 @@ public class Player : MonoBehaviour
     }
 
     // tint red on hit
-    IEnumerator RedOnHit(){
+    public IEnumerator RedOnHit(){
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;   // damaged
         yield return new WaitForSeconds(0.2f);
         
@@ -62,11 +61,7 @@ public class Player : MonoBehaviour
 
     public IEnumerator PlayerImmune(){
         immune = true;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
-        Debug.Log("IMMUNE");
         yield return new WaitForSeconds(1f);
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal
-        Debug.Log("IMMUNE OVER");
         immune = false;
     }
 
