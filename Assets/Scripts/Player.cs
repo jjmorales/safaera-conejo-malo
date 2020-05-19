@@ -59,4 +59,18 @@ public class Player : MonoBehaviour
         
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal
     }
+
+    public IEnumerator PlayerImmune(){
+        immune = true;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+        Debug.Log("IMMUNE");
+        yield return new WaitForSeconds(1f);
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal
+        Debug.Log("IMMUNE OVER");
+        immune = false;
+    }
+
+    public bool isImmune(){
+        return immune;
+    }
 }
