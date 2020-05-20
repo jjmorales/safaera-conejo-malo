@@ -158,7 +158,8 @@ MonoBehaviour:
   attackDamage: 30
   rb: {fileID: 6866872586858191727}
   direction: Horz
-  HitStop: 0
+  HitStop: 1
+  self: {fileID: 0}
   isPlayer: 1
 --- !u!114 &4957343342140529966
 MonoBehaviour:

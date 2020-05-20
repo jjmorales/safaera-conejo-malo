@@ -9,13 +9,9 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     public int AttackDamage = 20;
     public float speed = 2f;
+    public bool confetti = false;
     int currHealth;
     PointSystem ps;
- 
-    
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +38,10 @@ public class Enemy : MonoBehaviour
 
     void die(){
         ps.addPointsKill();
+
+        if(confetti){
         this.GetComponent<ConfettiPoints>().spawnDrop();
+        }
         Destroy(this.gameObject);
     }
 

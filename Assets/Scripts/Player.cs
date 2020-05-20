@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
             TakeDamage(col.gameObject.GetComponent<Enemy>().AttackDamage);
         }
 
-            if(currHealth <= 0){
+            if(currHealth <= 0 && !immune){
                 immune = true;
                 currHealth = 0;
                 healthBar.value = currHealth;
