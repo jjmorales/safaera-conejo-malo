@@ -143,6 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathImage: {fileID: 21300000, guid: b47122e6d162c418e9f4bdc960a94911, type: 3}
-  slowAmount: 1
-  slowTime: 2
-  pointSystem: {fileID: 0}
+  slowAmount: 10
+  slowTime: 0.5

@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D col){
-
         if(col.gameObject.tag == "Enemy" && !immune){
             TakeDamage(col.gameObject.GetComponent<Enemy>().AttackDamage);
         }

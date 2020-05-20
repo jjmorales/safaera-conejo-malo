@@ -5,13 +5,22 @@ using UnityEngine;
 public class Runner : MonoBehaviour
 {
     public int speed;
+    public int maxSpeed;
+    public float resetTime;
+    public float speedUpRate;
+    public int rampUp;
     Rigidbody2D rb;
     bool jump;
+
+    bool slowed = false;
+   
+
     public CharacterController2D controller;
     // Start is called before the first frame update
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
+        InvokeRepeating("ramp", Time.time + resetTime, speedUpRate);
     }
 
     void Update(){
@@ -20,22 +29,31 @@ public class Runner : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    void ramp(){
+        if(speed <= maxSpeed)
+        speed += rampUp;
+
+    }
+
     void FixedUpdate()
     {
 
         controller.Move(speed * Time.fixedDeltaTime, false, jump);
-
+        
         jump = false;
     }
 
     public IEnumerator slowDown(int slowAmount, float slowTime){
-        int currSpeed = speed;
-
+        CancelInvoke();
         speed -= slowAmount;
+        slowed = true;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(slowTime);
 
-        speed = currSpeed;
+        Debug.Log("NEW SPEED " + speed);
+        slowed = false;
+
+        InvokeRepeating("ramp", Time.time + resetTime, speedUpRate);
+        
     }
 }
