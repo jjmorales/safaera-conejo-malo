@@ -7,6 +7,8 @@ public class CharacterController2D : MonoBehaviour
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
+	[SerializeField] private bool m_FastCrouch = false;							// fast down on crouch if jumping
+	[SerializeField] private float m_FastCrouchWeight = 0;							// fast down on crouch if jumping
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
@@ -16,6 +18,7 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
+	private float m_PlayerGravity = 1;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
@@ -32,7 +35,9 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
+		this.m_PlayerGravity = GetComponent<Rigidbody2D>().gravityScale;
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -63,12 +68,22 @@ public class CharacterController2D : MonoBehaviour
 
 	public void Move(float move, bool crouch, bool jump)
 	{
+		if(crouch){
+			// fast crouch
+			m_Rigidbody2D.gravityScale = m_FastCrouchWeight;
+		}else{
+			// reset gravity fast crouch
+			m_Rigidbody2D.gravityScale = m_PlayerGravity;
+		}
+
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
 		{
+
 			// If the character has a ceiling preventing them from standing up, keep them crouching
 			if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
-			{
+			{	
+
 				crouch = true;
 			}
 		}
@@ -76,10 +91,10 @@ public class CharacterController2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
-
 			// If crouching
 			if (crouch)
 			{
+
 				if (!m_wasCrouching)
 				{
 					m_wasCrouching = true;

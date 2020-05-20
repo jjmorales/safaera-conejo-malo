@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// 2D player movement, script handles input and sends it to the controller (PlayerControler2D)
 public class PlayerMovement2D : MonoBehaviour
 {
 
@@ -12,32 +13,19 @@ public class PlayerMovement2D : MonoBehaviour
     public float runSpeed = 40f;
     bool jump = false;
     bool crouch = false;
-    public float clampTop;
-    public float clampBot;
-    public float clampLeft;
-    public float clampRight;
-    public bool clamp;
 
-    // Update is called once per frame
+
     void Update()
     {
 
-        if(!Input.GetKey("q")){
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-            if(clamp){
-            transform.position = new Vector2(Mathf.Clamp(transform.position.x, clampLeft, clampRight), Mathf.Clamp(transform.position.y, clampBot, clampTop));
-            }
-        
-        }else{
-            horizontalMove = 0;
-        }
 
         // update animator
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         //animator.SetBool("isCrouched", crouch);
 
-        if(Input.GetButtonDown("Jump") && !Input.GetKey("q")){
+        if(Input.GetButtonDown("Jump")){
             jump = true;
         }
 
