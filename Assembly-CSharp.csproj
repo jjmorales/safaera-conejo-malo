@@ -91,6 +91,7 @@
      <Compile Include="Assets\Scripts\Runner.cs" />
      <Compile Include="Assets\Scripts\ShipBehave.cs" />
      <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
+     <Compile Include="Assets\Scripts\SquidBomb.cs" />
      <None Include="Assets\CodeMonkey\README.txt" />
      <None Include="Assets\Sprites\space\space_background_pack\license.txt" />
  <Reference Include="Unity.Timeline.Editor">
