@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     PointSystem ps;
     Slider healthBar; 
     bool immune = false;
+    SceneLoader sceneLoader;
     
     
  
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         currHealth = maxHealth;
+        sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();    // link score board
         healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<Slider>();
 
@@ -27,17 +29,11 @@ public class Player : MonoBehaviour
         if(col.gameObject.tag == "Enemy" && !immune){
             TakeDamage(col.gameObject.GetComponent<Enemy>().AttackDamage);
         }
-
-            if(currHealth <= 0 && !immune){
-                immune = true;
-                currHealth = 0;
-                healthBar.value = currHealth;
-                Die();
-            }
     }
 
     void Die(){
         ps.deductPointsDeath();
+        sceneLoader.LoadLevelSelection();
 
         // play death animation
     }
@@ -49,6 +45,8 @@ public class Player : MonoBehaviour
         if(currHealth > 0){
             StartCoroutine(RedOnHit());
         }
+
+        if(currHealth <= 0) Die();
     }
 
     // tint red on hit

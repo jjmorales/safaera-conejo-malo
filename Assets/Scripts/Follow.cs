@@ -20,7 +20,7 @@ public class Follow : MonoBehaviour
 
             // end game
 
-            Destroy(col.gameObject);
+            col.GetComponent<Player>().TakeDamage(col.GetComponent<Player>().maxHealth);
             speed = 0;
         }
     }

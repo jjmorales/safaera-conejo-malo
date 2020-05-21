@@ -33,10 +33,12 @@ public class SquidBomb : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         
         if(col.gameObject.tag == "Player"){
+            if(launching == true){
             launching = false;
             animator.SetTrigger("Explode");
             GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().TakeDamage(AttackDamage);
-            Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length - 2); 
+            Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length - 2);
+            } 
 
         }
     }
@@ -48,9 +50,11 @@ public class SquidBomb : MonoBehaviour
     }
 
     void selfDestruct(){
+        if(launching == true){
         launching = false;
         animator.SetTrigger("Explode");        
         Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length - 2); 
+        }
     }
 
 
