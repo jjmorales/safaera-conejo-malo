@@ -6,6 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PLAYGROUND.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/game scenes/start.unity
+    guid: def22dc8382904eeabd806084dfe0e18
+  - enabled: 1
+    path: Assets/Scenes/game scenes/safari.unity
+    guid: f4f7a329546dc4fd4b2750762280b5d2
+  - enabled: 1
+    path: Assets/Scenes/game scenes/tunnels.unity
+    guid: e3d74c9b294934e279489949c11d2a62
+  - enabled: 1
+    path: Assets/Scenes/game scenes/space.unity
+    guid: 883677baf46ec494baa9fc4e4387fe5f
+  - enabled: 1
+    path: Assets/Scenes/game scenes/beach.unity
+    guid: f39408e25d20244e2a4cf6ffb1f7c9ac
+  - enabled: 1
+    path: Assets/Scenes/game scenes/ocean.unity
+    guid: 24d44afaa76d1419584d0b8e325f2b5e
+  - enabled: 1
+    path: Assets/Scenes/game scenes/pyramids.unity
+    guid: e9b521fa7c57c456b955bca78f308bf2
+  - enabled: 1
+    path: Assets/Scenes/game scenes/credits.unity
+    guid: e992ea1934d044ee8b41dac36de81eb0
+  - enabled: 1
+    path: Assets/Scenes/game scenes/levelSelect.unity
+    guid: 6e85c59fe51b4462ba2b85d235b25858
   m_configObjects: {}
