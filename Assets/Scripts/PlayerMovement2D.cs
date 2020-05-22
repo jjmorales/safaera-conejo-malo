@@ -25,8 +25,10 @@ public class PlayerMovement2D : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         //animator.SetBool("isCrouched", crouch);
 
-        if(Input.GetButtonDown("Jump")){
+        if(Input.GetButton("Jump")){
             jump = true;
+        }else if(Input.GetButtonUp("Jump")){
+            jump = false;
         }
 
         if(Input.GetButtonDown("Crouch")){
@@ -40,7 +42,7 @@ public class PlayerMovement2D : MonoBehaviour
         
         //move character
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
-        jump = false;
+ 
     }
 
     

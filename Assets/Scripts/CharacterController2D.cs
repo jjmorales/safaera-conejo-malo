@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+	public bool mousePointTurn = false;											// flip sprite depending on cursor location
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
@@ -22,6 +23,7 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
+
 	[Header("Events")]
 	[Space]
 
@@ -32,6 +34,8 @@ public class CharacterController2D : MonoBehaviour
 
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
+	private bool isJumping = false;
+
 
 	private void Awake()
 	{
@@ -65,9 +69,22 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
+	private void Update(){
+
+		if(mousePointTurn){
+			if((Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x) > 0 && !m_FacingRight ||
+			(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x) < 0 && m_FacingRight){
+				Flip();
+			}
+		}
+		
+	}
+
 
 	public void Move(float move, bool crouch, bool jump)
 	{
+		isJumping = jump;
+
 		if(crouch){
 			// fast crouch
 			m_Rigidbody2D.gravityScale = m_FastCrouchWeight;
@@ -125,19 +142,23 @@ public class CharacterController2D : MonoBehaviour
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
-			// If the input is moving the player right and the player is facing left...
-			if (move > 0 && !m_FacingRight)
-			{
-				// ... flip the player.
-				Flip();
-			}
-			// Otherwise if the input is moving the player left and the player is facing right...
-			else if (move < 0 && m_FacingRight)
-			{
-				// ... flip the player.
-				Flip();
+
+			if(!mousePointTurn){
+				// If the input is moving the player right and the player is facing left...
+				if (move > 0 && !m_FacingRight)
+				{
+					// ... flip the player.
+					Flip();
+				}
+				// Otherwise if the input is moving the player left and the player is facing right...
+				else if (move < 0 && m_FacingRight)
+				{
+					// ... flip the player.
+					Flip();
+				}
 			}
 		}
+
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
@@ -146,7 +167,6 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
 	}
-
 
 	private void Flip()
 	{

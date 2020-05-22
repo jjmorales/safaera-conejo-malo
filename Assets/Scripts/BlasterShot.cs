@@ -11,7 +11,7 @@ public class BlasterShot : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Fire1")){
-            Shoot();
+            //Shoot();
         }
     }
 

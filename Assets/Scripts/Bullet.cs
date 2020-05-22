@@ -22,29 +22,29 @@ public class Bullet : MonoBehaviour
             rb.velocity = transform.up * speed;
         }
 
-        Destroy(self, 3f);
+        Destroy(gameObject, 2f);    // destroy bullet after x time
     }
     void OnTriggerEnter2D(Collider2D col){
 
-        if(isPlayer){
+        if(isPlayer){   // player damage enemy
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
 
             // check if collision was on an enemy
             if(enemy != null){
-                if(HitStop) FindObjectOfType<HitStop>().Stop(0.1f);     // hit stop effect
-
                 enemy.takeDamage(attackDamage);
+                                
+                // hit stop effect
+                if(HitStop) FindObjectOfType<HitStop>().Stop(0.1f);
+                StartCoroutine(WaitForDestroy());
             }
-        }else if(!isPlayer){
+        }else if(!isPlayer){    // enemy damage player
             if(col.gameObject.tag == "Player") GameObject.FindObjectOfType<Player>().TakeDamage(attackDamage);
         }
-
-        if(col.gameObject.tag == "Player" || col.gameObject.tag == "Enemy") StartCoroutine(WaitForDestroy());
 
         // insert instantiation of a collision blaster effect here
     }
 
-    IEnumerator WaitForDestroy(){
+    IEnumerator WaitForDestroy(){   // wait for time to be reset from hit stop effect
         while(Time.timeScale != 1){
             yield return null;
         }
