@@ -20,6 +20,12 @@ public class Follow : MonoBehaviour
         }else if(chaseIndex < 0){
             chaseIndex = 0;
         }
+
+        if(chaseIndex == 1){
+            animator.SetBool("Close", true);
+        }else{ 
+            animator.SetBool("Close", false);
+        }
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(increments[chaseIndex].transform.position.x, -3.81f), Time.deltaTime * speed);
     }
 
