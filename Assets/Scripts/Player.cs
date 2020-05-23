@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();    // link score board
 
-        healthBar.setMaxHealth(maxHealth);
+        //healthBar.setMaxHealth(maxHealth);
 
     }
 
@@ -49,6 +49,11 @@ public class Player : MonoBehaviour
         }
 
         if(currHealth <= 0) Die();
+    }
+
+    public void heal(int healAmount){
+        currHealth += healAmount;
+        GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().heal();
     }
 
     // tint red on hit
