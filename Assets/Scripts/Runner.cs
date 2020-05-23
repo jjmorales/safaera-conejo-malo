@@ -35,7 +35,7 @@ public class Runner : MonoBehaviour
 
         if(maxSpeed <= speed){
             CancelInvoke();
-            slowed = false;
+            slowed = false; // can now be slowed at full speed
             mainEnemy.GetComponent<Follow>().chaseReset();
         }
     }
@@ -60,7 +60,7 @@ public class Runner : MonoBehaviour
 
         if(!slowed){
         speed -= slowAmount;
-        slowed = true;
+        slowed = true;  // slow once
         }
 
         yield return new WaitForSeconds(slowTime);

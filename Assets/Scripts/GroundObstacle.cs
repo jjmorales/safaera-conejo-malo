@@ -45,7 +45,6 @@ public class GroundObstacle : MonoBehaviour
                 StartCoroutine(col.GetComponent<Runner>().slowDown(slowAmount, slowTime));
                 StartCoroutine(col.GetComponent<Player>().RedOnHit());
                 
-                GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().hit();
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().TakeDamage(1);
 
                 // slow UI
