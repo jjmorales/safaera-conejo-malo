@@ -8,6 +8,8 @@ TagManager:
   - Scoreboard
   - HealthBar
   - SceneLoader
+  - Floor
+  - Destroy
   layers:
   - Default
   - TransparentFX

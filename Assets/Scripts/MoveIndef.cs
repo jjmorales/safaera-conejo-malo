@@ -6,7 +6,11 @@ public class MoveIndef : MonoBehaviour
 {
     public int speed;
     public GameObject point;
+    public int deathDelay;
 
+    void Start(){
+        Destroy(gameObject, deathDelay);
+    }
     // Update is called once per frame
     void Update()
     {

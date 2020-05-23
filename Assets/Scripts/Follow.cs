@@ -8,6 +8,7 @@ public class Follow : MonoBehaviour
     public GameObject [] increments;
     public float speed;
     public bool endGameCatch = false;
+    public Animator animator;
     int chaseIndex = 4;
 
 
@@ -33,11 +34,12 @@ public class Follow : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col){
         if(endGameCatch && col.gameObject.tag == "Player"){
+            speed = 0;
 
             // end game
-
-            col.GetComponent<Player>().Die();
-            speed = 0;
+            col.GetComponent<Runner>().speed = 0;
+            col.GetComponent<Runner>().die();
+            animator.SetTrigger("Catch");
         }
     }
 }

@@ -13,6 +13,7 @@ public class Runner : MonoBehaviour
     public GameObject mainEnemy;
     Rigidbody2D rb;
     bool jump;
+    SceneLoader sceneLoader;
 
     bool slowed = false;
    
@@ -21,6 +22,7 @@ public class Runner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         animator.SetFloat("Speed", 1);
     }
@@ -67,5 +69,11 @@ public class Runner : MonoBehaviour
 
         InvokeRepeating("ramp", Time.time + resetTime, speedUpRate);
         
+    }
+
+    public void die(){
+        animator.SetTrigger("Die");
+        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
+        //sceneLoader.LoadLevelSelection();
     }
 }

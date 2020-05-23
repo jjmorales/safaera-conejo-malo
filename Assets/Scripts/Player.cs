@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     int currHealth;
     PointSystem ps;
-    //HealthBar healthBar;
+    HealthBar healthBar;
     bool immune = false;
     SceneLoader sceneLoader;
     
@@ -19,11 +19,11 @@ public class Player : MonoBehaviour
     {
         currHealth = maxHealth;
         
-        //healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
+        if (healthBar) healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();    // link score board
 
-        //healthBar.setMaxHealth(maxHealth);
+        if(healthBar) healthBar.setMaxHealth(maxHealth);
 
     }
 
@@ -34,8 +34,8 @@ public class Player : MonoBehaviour
     }
 
     public void Die(){
-        //healthBar.setHealth(0);
-        sceneLoader.LoadLevelSelection();
+        if(healthBar) healthBar.setHealth(0);
+        //sceneLoader.LoadLevelSelection();
 
         // play death animation
     }
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         currHealth -= dmg;
 
         if(currHealth > 0){
-            //healthBar.setHealth(currHealth);
+            if(healthBar) healthBar.setHealth(currHealth);
             StartCoroutine(RedOnHit());
         }
 

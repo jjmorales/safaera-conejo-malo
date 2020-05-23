@@ -8,7 +8,6 @@ public class GroundObstacle : MonoBehaviour
     public Sprite deathImage;
     public int slowAmount;
     public float slowTime;
-    public int deathDelay;
      PointSystem pointSystem;
     Renderer m_Renderer;
     bool working = true;
@@ -21,7 +20,6 @@ public class GroundObstacle : MonoBehaviour
     void Start(){
         m_Renderer = GetComponent<Renderer>();
         pointSystem = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
-        Destroy(gameObject, deathDelay);
     }
 
     void Update(){
