@@ -10,6 +10,7 @@ public class Runner : MonoBehaviour
     public float speedUpRate;
     public int rampUp;
     public Animator animator;
+    public GameObject mainEnemy;
     Rigidbody2D rb;
     bool jump;
 
@@ -21,7 +22,6 @@ public class Runner : MonoBehaviour
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
-        InvokeRepeating("ramp", Time.time + resetTime, speedUpRate);
         animator.SetFloat("Speed", 1);
     }
 
@@ -31,6 +31,12 @@ public class Runner : MonoBehaviour
             jump = true;
         }else if(Input.GetKeyUp("w")){
             animator.SetBool("Jump", false);
+        }
+
+        if(maxSpeed <= speed){
+            CancelInvoke();
+            slowed = false;
+            mainEnemy.GetComponent<Follow>().chaseReset();
         }
     }
 
@@ -50,12 +56,14 @@ public class Runner : MonoBehaviour
 
     public IEnumerator slowDown(int slowAmount, float slowTime){
         CancelInvoke();
+        mainEnemy.GetComponent<Follow>().chaseInc();
+
+        if(!slowed){
         speed -= slowAmount;
         slowed = true;
+        }
 
         yield return new WaitForSeconds(slowTime);
-
-        slowed = false;
 
         InvokeRepeating("ramp", Time.time + resetTime, speedUpRate);
         

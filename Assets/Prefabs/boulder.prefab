@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3997646863564691659}
   - component: {fileID: 3997646863564691658}
   - component: {fileID: 3997646863564691656}
-  - component: {fileID: 4935755108844125363}
   - component: {fileID: 2567719478532248127}
   - component: {fileID: 7937779500145498992}
   - component: {fileID: 9080564986051547846}
+  - component: {fileID: 8899376498462012604}
   m_Layer: 8
   m_Name: boulder
   m_TagString: Enemy
@@ -104,21 +104,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4935755108844125363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3997646863564691653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d413a87d144054de7ad9ecb65d778f71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 2730342118290081011, guid: 76d0ed7e8bb71429f878b8de31f3246d, type: 3}
-  speed: 3
-  endGameCatch: 0
 --- !u!58 &2567719478532248127
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -149,7 +134,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -169,7 +154,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathImage: {fileID: 0}
-  slowAmount: 10
-  slowTime: 2
+  slowAmount: 20
+  slowTime: 1
   deathDelay: 4
-  AttackDamage: 0
+  AttackDamage: 1
+--- !u!114 &8899376498462012604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3997646863564691653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602d2274121a040fe8b4fb4efd3b88eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  point: {fileID: 1490497194363707596, guid: d2fbe46a749d24735b967376968cf18e, type: 3}

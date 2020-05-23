@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     }
 
     public void Die(){
-        healthBar.setHealth(0);
+        //healthBar.setHealth(0);
         sceneLoader.LoadLevelSelection();
 
         // play death animation
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         currHealth -= dmg;
 
         if(currHealth > 0){
-            healthBar.setHealth(currHealth);
+            //healthBar.setHealth(currHealth);
             StartCoroutine(RedOnHit());
         }
 
@@ -67,5 +67,9 @@ public class Player : MonoBehaviour
 
     public bool isImmune(){
         return immune;
+    }
+
+    public int getCurrHealth(){
+        return currHealth;
     }
 }

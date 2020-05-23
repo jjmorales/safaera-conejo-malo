@@ -80,7 +80,9 @@
      <Compile Include="Assets\Scripts\GroundObstacle.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\HitStop.cs" />
+     <Compile Include="Assets\Scripts\LifeBar.cs" />
      <Compile Include="Assets\Scripts\MonkeySwing.cs" />
+     <Compile Include="Assets\Scripts\MoveIndef.cs" />
      <Compile Include="Assets\Scripts\MultipleRandomSpawn.cs" />
      <Compile Include="Assets\Scripts\Parallax.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
@@ -95,6 +97,8 @@
      <Compile Include="Assets\Scripts\ShipBehave.cs" />
      <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
      <Compile Include="Assets\Scripts\SquidBomb.cs" />
+     <None Include="Assets\Fonts\press-start-2p-font\misc\LICENSE-65f9.txt" />
+     <None Include="Assets\Fonts\press-start-2p-font\misc\FONTLOG-e017.txt" />
      <None Include="Assets\CodeMonkey\README.txt" />
      <None Include="Assets\Sprites\space\space_background_pack\license.txt" />
  <Reference Include="Unity.Timeline.Editor">

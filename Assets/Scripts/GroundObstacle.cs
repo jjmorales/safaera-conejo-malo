@@ -12,7 +12,7 @@ public class GroundObstacle : MonoBehaviour
      PointSystem pointSystem;
     Renderer m_Renderer;
     bool working = true;
-    public int AttackDamage = 0;
+    public int AttackDamage = 1;
     bool point = true;
 
 
@@ -32,7 +32,7 @@ public class GroundObstacle : MonoBehaviour
     }
 
     void givePoint(){
-        GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Animator>().SetTrigger("NewPoint");
+        //GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Animator>().SetTrigger("NewPoint");
         GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>().customPoint(1);
     }
 
@@ -44,9 +44,12 @@ public class GroundObstacle : MonoBehaviour
             if(!col.GetComponent<Player>().isImmune()){
                 StartCoroutine(col.GetComponent<Runner>().slowDown(slowAmount, slowTime));
                 StartCoroutine(col.GetComponent<Player>().RedOnHit());
+                
+                GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().hit();
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().TakeDamage(1);
 
                 // slow UI
-                GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Animator>().SetTrigger("Slow");
+                //GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Animator>().SetTrigger("Slow");
                 
             }else{
                 if(deathImage){
