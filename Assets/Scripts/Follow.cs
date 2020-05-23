@@ -15,8 +15,7 @@ public class Follow : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        Debug.Log(col.tag);
-        if(endGameCatch && col.tag == "Player"){
+        if(endGameCatch && col.gameObject.tag == "Player"){
 
             // end game
 

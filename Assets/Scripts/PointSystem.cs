@@ -15,6 +15,11 @@ public class PointSystem : MonoBehaviour
         currentPoints = 0;
     }
 
+    public void customPoint(int value){
+        currentPoints += value;
+        points.text = currentPoints.ToString();
+    }
+
 
     public void addPointsKill(){
         currentPoints += 50;

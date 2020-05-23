@@ -9,6 +9,7 @@ public class Runner : MonoBehaviour
     public float resetTime;
     public float speedUpRate;
     public int rampUp;
+    public Animator animator;
     Rigidbody2D rb;
     bool jump;
 
@@ -21,11 +22,15 @@ public class Runner : MonoBehaviour
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         InvokeRepeating("ramp", Time.time + resetTime, speedUpRate);
+        animator.SetFloat("Speed", 1);
     }
 
     void Update(){
         if(Input.GetKeyDown("w")){
+            animator.SetBool("Jump", true);
             jump = true;
+        }else if(Input.GetKeyUp("w")){
+            animator.SetBool("Jump", false);
         }
     }
 
@@ -39,7 +44,7 @@ public class Runner : MonoBehaviour
     {
 
         controller.Move(speed * Time.fixedDeltaTime, false, jump);
-        
+
         jump = false;
     }
 
@@ -50,7 +55,6 @@ public class Runner : MonoBehaviour
 
         yield return new WaitForSeconds(slowTime);
 
-        Debug.Log("NEW SPEED " + speed);
         slowed = false;
 
         InvokeRepeating("ramp", Time.time + resetTime, speedUpRate);
