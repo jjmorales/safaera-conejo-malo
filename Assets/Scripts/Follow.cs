@@ -21,9 +21,7 @@ public class Follow : MonoBehaviour
             chaseIndex = 0;
         }
 
-        if(chaseIndex == 1){
-            animator.SetBool("Close", true);
-        }else{ 
+        if(chaseIndex != 1){
             animator.SetBool("Close", false);
         }
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(increments[chaseIndex].transform.position.x, -3.81f), Time.deltaTime * speed);
@@ -36,6 +34,9 @@ public class Follow : MonoBehaviour
     public void chaseInc(){
 
         chaseIndex = chaseIndex - 1;
+        
+        if(chaseIndex == 1)
+        animator.SetBool("Close", true);
     }
 
     void OnTriggerEnter2D(Collider2D col){
