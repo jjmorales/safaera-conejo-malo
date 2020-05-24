@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
 
     public void heal(int healAmount){
         currHealth += healAmount;
+        if(healthBar) healthBar.setHealth(currHealth);
     }
 
     // tint red on hit
