@@ -10,8 +10,8 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public string direction;
     public bool HitStop = false;
-    public GameObject self;
     public bool isPlayer = true;
+    public GameObject particle;
  
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,10 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col){
 
+        if(col.gameObject.tag == "Level"){
+            StartCoroutine(WaitForDestroy());
+        }
+
         if(isPlayer){   // player damage enemy
             Enemy enemy = col.gameObject.GetComponent<Enemy>();
 
@@ -35,6 +39,11 @@ public class Bullet : MonoBehaviour
                                 
                 // hit stop effect
                 if(HitStop) FindObjectOfType<HitStop>().Stop(0.1f);
+
+                // particle effect for bullet
+                Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
+
+                // destroy particle after hitstop
                 StartCoroutine(WaitForDestroy());
             }
         }else if(!isPlayer){    // enemy damage player

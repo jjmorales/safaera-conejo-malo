@@ -159,8 +159,9 @@ MonoBehaviour:
   rb: {fileID: 6866872586858191727}
   direction: Horz
   HitStop: 1
-  self: {fileID: 0}
   isPlayer: 1
+  particle: {fileID: 3685215531604259784, guid: 70637007a1f984ea78c400043eaefd70,
+    type: 3}
 --- !u!114 &4957343342140529966
 MonoBehaviour:
   m_ObjectHideFlags: 0

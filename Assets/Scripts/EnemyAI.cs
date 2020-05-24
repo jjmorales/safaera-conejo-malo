@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
         seeker = GetComponent<Seeker>();    // set seeker
         rb = GetComponent<Rigidbody2D>();   // set rigid body
   
-        InvokeRepeating("UpdatePath", 0f, 0.5f);    // update path continuously
+        InvokeRepeating("UpdatePath", 0f, 0.1f);    // update path continuously
     }
 
     // if seeker path is completed, generate a new one
