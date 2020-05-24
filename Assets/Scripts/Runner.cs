@@ -73,7 +73,7 @@ public class Runner : MonoBehaviour
 
     public void die(){
         animator.SetTrigger("Die");
-        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
+        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
         //sceneLoader.LoadLevelSelection();
     }
 }

@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
         //sceneLoader.LoadLevelSelection();
 
         // play death animation
+        gameObject.GetComponent<Animator>().SetTrigger("Die");
+        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
     }
 
     public void TakeDamage(int dmg){

@@ -18,4 +18,6 @@ public class BlasterShot : MonoBehaviour
     void Shoot(){
         Instantiate(blaster, firePoint.transform.position, firePoint.transform.rotation);
     }
+
+
 }
