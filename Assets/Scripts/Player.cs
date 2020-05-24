@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     {
         currHealth = maxHealth;
         
-        if (healthBar) healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
+        healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();    // link score board
 

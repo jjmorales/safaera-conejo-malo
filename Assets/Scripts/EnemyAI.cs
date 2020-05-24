@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour
 
     // if seeker path is completed, generate a new one
     void UpdatePath(){
+        Debug.Log(seeker);
         if(seeker.IsDone()){
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }

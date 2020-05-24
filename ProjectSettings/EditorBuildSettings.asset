@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/game scenes/start.unity
     guid: def22dc8382904eeabd806084dfe0e18
   - enabled: 1
-    path: Assets/Scenes/game scenes/safari.unity
+    path: Assets/Scenes/game scenes/beta/safari.unity
     guid: f4f7a329546dc4fd4b2750762280b5d2
   - enabled: 1
     path: Assets/Scenes/game scenes/tunnels.unity
