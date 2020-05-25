@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
 
         if(currHealth > 0){
             if(healthBar) healthBar.setHealth(currHealth);
+            immune = true;
             StartCoroutine(RedOnHit());
         }
 
@@ -55,15 +56,17 @@ public class Player : MonoBehaviour
 
     public void heal(int healAmount){
         currHealth += healAmount;
-        if(healthBar) healthBar.setHealth(currHealth);
+        if(healthBar) healthBar.setHealth(currHealth); 
     }
 
     // tint red on hit
     public IEnumerator RedOnHit(){
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;   // damaged
+        immune = true;
         yield return new WaitForSeconds(0.2f);
         
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal
+        immune = false;
     }
 
     public IEnumerator PlayerImmune(){

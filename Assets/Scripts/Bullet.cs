@@ -41,7 +41,8 @@ public class Bullet : MonoBehaviour
                 if(HitStop) FindObjectOfType<HitStop>().Stop(0.1f);
 
                 // particle effect for bullet
-                Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
+                GameObject effect = Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
+                Destroy(effect, 2);
 
                 // destroy particle after hitstop
                 StartCoroutine(WaitForDestroy());
