@@ -43,20 +43,18 @@ public class Patrol : MonoBehaviour
             if(playerInfo.transform.tag == "Player"){
                 chase = true;
                 lastSeen = Time.time;
-                Debug.Log("GOTchaaa");
             }
         }
 
 
         if(chase){
-            Transform oldPos = transform;   // save previous transform to compare for facing left/right
 
             transform.position = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, 1.6f * speed * Time.deltaTime);
 
             // update facing direction
-            if(transform.position.x > oldPos.position.x){
+            if(transform.position.x < GameObject.FindGameObjectWithTag("Player").transform.position.x){
                 movingRight = true;
-            }else if(transform.position.x < oldPos.position.x){
+            }else if(transform.position.x > GameObject.FindGameObjectWithTag("Player").transform.position.x){
                 movingRight = false;
             }
         }else{
