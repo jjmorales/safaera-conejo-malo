@@ -10,8 +10,10 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public string direction;
     public bool HitStop = false;
+    public bool knockBack = false;
     public bool isPlayer = true;
     public GameObject particle;
+    private bool knockBackDone = true;
  
     // Start is called before the first frame update
     void Start()
@@ -35,29 +37,42 @@ public class Bullet : MonoBehaviour
 
             // check if collision was on an enemy
             if(enemy != null){
+
                 enemy.takeDamage(attackDamage);
                                 
                 // hit stop effect
                 if(HitStop) FindObjectOfType<HitStop>().Stop(0.1f);
 
+                // knock back effect
+                if(knockBack) knockBackDone = false;
+
                 // particle effect for bullet
                 GameObject effect = Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
-                Destroy(effect, 2);
+                Destroy(effect, 2f);
 
                 // destroy particle after hitstop
                 StartCoroutine(WaitForDestroy());
             }
         }else if(!isPlayer){    // enemy damage player
             if(col.gameObject.tag == "Player") GameObject.FindObjectOfType<Player>().TakeDamage(attackDamage);
+            StartCoroutine(WaitForDestroy());
         }
-
-        // insert instantiation of a collision blaster effect here
     }
 
     IEnumerator WaitForDestroy(){   // wait for time to be reset from hit stop effect
-        while(Time.timeScale != 1){
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(gameObject.transform.GetChild(0));
+
+        while(Time.timeScale != 1 || !knockBackDone){
+            
             yield return null;
         }
+
+
         Destroy(gameObject);
+    }
+
+    public void knockingBackDone(){
+        knockBackDone = true;
     }
 }

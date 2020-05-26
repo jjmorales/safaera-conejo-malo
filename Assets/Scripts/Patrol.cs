@@ -3,27 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Patrol : MonoBehaviour
-{
+{ 
+    // public vars
     public float speed;
     public Rigidbody2D rb;
-
-    private bool movingRight = true;
-
+    public float lastSeen;
+    public float chaseSpeed;
+    public bool knockedBack = false;
     public Transform groundDetection;
-  
-
+   
+    // private vars
+    bool movingRight = true;
     bool chase = false;
     bool inSight = false;
-    public float lastSeen;
 
+
+    private void FixedUpdate(){
+
+        if(!knockedBack){   // no chasing or mocement if knocked back
+            if(chase){  // chase character
+                rb.MovePosition((Vector2)transform.position + ((Vector2)transform.right * chaseSpeed * Time.deltaTime));
+
+                // update facing direction
+                if(transform.position.x < GameObject.FindGameObjectWithTag("Player").transform.position.x){
+                    movingRight = true;
+                }else if(transform.position.x > GameObject.FindGameObjectWithTag("Player").transform.position.x){
+                    movingRight = false;
+                }
+            }else{  // patrol platform
+                rb.velocity = transform.right * speed * Time.deltaTime;
+            }
+        }
+    }
 
     private void Update()
     {
 
+        // chase reset on timer
         if(Time.time - lastSeen >= 3){
             chase = false;
         }
 
+        // create rays for potential collisions
         RaycastHit2D groundInfo;
         RaycastHit2D wallInfo;
         RaycastHit2D playerInfo;
@@ -37,8 +58,9 @@ public class Patrol : MonoBehaviour
             wallInfo = Physics2D.Raycast(groundDetection.position, Vector2.right, -2f);     // wall detection
             playerInfo = Physics2D.Raycast(groundDetection.position, Vector2.right, -4f);   // player detection
         }
-        Debug.DrawLine(groundDetection.position, transform.position + Vector3.right * 2f, Color.red);
+        
 
+        // player check
         if(playerInfo.collider != null){
             if(playerInfo.transform.tag == "Player"){
                 chase = true;
@@ -46,37 +68,23 @@ public class Patrol : MonoBehaviour
             }
         }
 
-
-        if(chase){
-
-            transform.position = Vector2.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, 1.6f * speed * Time.deltaTime);
-
-            // update facing direction
-            if(transform.position.x < GameObject.FindGameObjectWithTag("Player").transform.position.x){
-                movingRight = true;
-            }else if(transform.position.x > GameObject.FindGameObjectWithTag("Player").transform.position.x){
-                movingRight = false;
-            }
-        }else{
-            transform.position += transform.right * speed * Time.deltaTime;
-        }
-
-
-        // patrol behavior direction toggle on obstacle
+        // obstacle check
         if(groundInfo.collider == false)
-        {
+        {   
+            chase = false;
             changeDirection();
         }
-
         if(wallInfo.collider != null){
             if(wallInfo.transform.tag == "Level"){
+                chase = false;
                 changeDirection();
             }
         }
 
-        spriteCheck();
+        spriteCheck();  // fix sprite rotation
     }
 
+    // flip direction (turn)
     void changeDirection(){
         if(movingRight == true){
             movingRight = false;
@@ -85,12 +93,18 @@ public class Patrol : MonoBehaviour
             }
     }
 
+    // check that sprite is facing correct direction
     void spriteCheck(){
         if(movingRight == true){
             transform.eulerAngles = new Vector3(0, 0, 0);
         }else{
             transform.eulerAngles = new Vector3(0, -180, 0);
             }
+    }
+
+    // no chasing or movement if knocked back
+    public void toggleKnockback(){
+        knockedBack = !knockedBack;
     }
     
 }
