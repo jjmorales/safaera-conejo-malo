@@ -20,12 +20,10 @@ public class DynamicSceneCamera : MonoBehaviour
             views[currPoint - 1].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = true;
             views[currPoint].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = false;
             currPoint--;
-            Debug.Log("back");
         }else if(player.transform.position.x >= switchPoints[currPoint + 1].transform.position.x){
             views[currPoint + 1].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = true;
             views[currPoint].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = false;
             currPoint++;
-            Debug.Log("forward");
         }
     }
 }
