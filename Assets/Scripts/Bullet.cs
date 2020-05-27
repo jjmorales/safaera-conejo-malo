@@ -61,7 +61,7 @@ public class Bullet : MonoBehaviour
 
     IEnumerator WaitForDestroy(){   // wait for time to be reset from hit stop effect
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        Destroy(gameObject.transform.GetChild(0));
+        Destroy(gameObject.transform.GetChild(0).gameObject);
 
         while(Time.timeScale != 1 || !knockBackDone){
             

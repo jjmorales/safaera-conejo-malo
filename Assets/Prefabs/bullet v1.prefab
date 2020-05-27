@@ -4908,7 +4908,7 @@ GameObject:
   - component: {fileID: 8246777762298009741}
   m_Layer: 0
   m_Name: bullet v1
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5080,4 +5080,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrust: 10
-  knockbackTime: 0.2
+  knockbackTime: 0.1

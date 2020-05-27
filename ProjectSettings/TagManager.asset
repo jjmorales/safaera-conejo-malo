@@ -11,6 +11,7 @@ TagManager:
   - Floor
   - Destroy
   - Level
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX

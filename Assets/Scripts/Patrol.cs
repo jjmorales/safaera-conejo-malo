@@ -106,6 +106,19 @@ public class Patrol : MonoBehaviour
     public void toggleKnockback(){
         knockedBack = !knockedBack;
     }
-    
+
+    void OnCollisionEnter2D(Collision2D col){
+        if(col.gameObject.transform.tag == "PlayerAttack" || col.gameObject.transform.tag == "Player"){
+            chase = true;
+            lastSeen = Time.time;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if(col.gameObject.transform.tag == "PlayerAttack"){
+            chase = true;
+            lastSeen = Time.time;
+        }
+    }    
 }
 
