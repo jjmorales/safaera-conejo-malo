@@ -28,8 +28,7 @@ public class Knockback : MonoBehaviour
  {
     if(enemy != null){
         yield return new WaitForSeconds(knockbackTime);
-        Debug.Log("done");
-        enemy.gameObject.GetComponent<Patrol>().toggleKnockback();
+        if(enemy) enemy.gameObject.GetComponent<Patrol>().toggleKnockback();
         gameObject.GetComponent<Bullet>().knockingBackDone();
     }
     

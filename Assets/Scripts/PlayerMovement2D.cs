@@ -27,6 +27,7 @@ public class PlayerMovement2D : MonoBehaviour
 
         if(Input.GetButton("Jump")){
             jump = true;
+            
         }
 
         if(Input.GetButtonDown("Crouch")){

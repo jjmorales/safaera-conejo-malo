@@ -3,13 +3,26 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
-	public bool mousePointTurn = false;											// flip sprite depending on cursor location
+
+	// jump stuff
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
+	[SerializeField] private float fallMultiplier = 2.5f;
+	[SerializeField] private float lowJumpMultiplier = 2f;
+	// private float lastJump = 0.2f;
+	// private float rememberLastJump;
+
+
+						
+	// misc
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
 	[SerializeField] private bool m_FastCrouch = false;							// fast down on crouch if jumping
 	[SerializeField] private float m_FastCrouchWeight = 0;						// fast down on crouch if jumping
+	[SerializeField] private  bool mousePointTurn = false;						// flip sprite depending on cursor location
+
+
+	// collider checks
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private int m_WhatIsGroundIntValue;					// int value for above
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
@@ -71,6 +84,13 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 	private void Update(){
+
+		if(m_Rigidbody2D.velocity.y < 0){
+			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+		}else if(m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("Jump")){
+			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+		}
+
 		if(mousePointTurn){
 			if((Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x) > 0 && !m_FacingRight ||
 			(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x) < 0 && m_FacingRight){
@@ -84,7 +104,7 @@ public class CharacterController2D : MonoBehaviour
 	public void Move(float move, bool crouch, bool jump)
 	{
 		isJumping = jump;
-
+		
 		if(crouch){
 			// fast crouch
 			m_Rigidbody2D.gravityScale = m_FastCrouchWeight;

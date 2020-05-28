@@ -14,16 +14,18 @@ public class DynamicSceneCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.transform.position.x >= switchPoints[currPoint].transform.position.x && player.transform.position.x < switchPoints[currPoint + 1].transform.position.x){
+        if(player){
+            if(player.transform.position.x >= switchPoints[currPoint].transform.position.x && player.transform.position.x < switchPoints[currPoint + 1].transform.position.x){
 
-        }else if(player.transform.position.x < switchPoints[currPoint].transform.position.x){
-            views[currPoint - 1].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = true;
-            views[currPoint].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = false;
-            currPoint--;
-        }else if(player.transform.position.x >= switchPoints[currPoint + 1].transform.position.x){
-            views[currPoint + 1].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = true;
-            views[currPoint].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = false;
-            currPoint++;
+            }else if(player.transform.position.x < switchPoints[currPoint].transform.position.x){
+                views[currPoint - 1].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = true;
+                views[currPoint].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = false;
+                currPoint--;
+            }else if(player.transform.position.x >= switchPoints[currPoint + 1].transform.position.x){
+                views[currPoint + 1].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = true;
+                views[currPoint].gameObject.GetComponent<CinemachineVirtualCamera>().enabled = false;
+                currPoint++;
+            }
         }
     }
 }
