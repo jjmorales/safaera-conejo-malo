@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {   
     public int maxHealth = 100;
+    public bool healthBarUI = true;
     int currHealth;
     PointSystem ps;
     HealthBar healthBar;
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour
     {
         currHealth = maxHealth;
         
-        healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
+        if(healthBarUI) healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
         sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();    // link score board
 
