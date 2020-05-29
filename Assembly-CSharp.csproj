@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\FindClosest.cs" />
      <Compile Include="Assets\Scripts\FireRandom.cs" />
+     <Compile Include="Assets\Scripts\FlightMovement.cs" />
      <Compile Include="Assets\Scripts\Follow.cs" />
      <Compile Include="Assets\Scripts\GroundObstacle.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
