@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
 
                 // particle effect for bullet
                 GameObject effect = Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
-                Destroy(effect, 1f);
+                Destroy(effect, 0.2f);
 
                 // destroy particle after hitstop
                 StartCoroutine(WaitForDestroy());
