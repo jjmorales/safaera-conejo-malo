@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
 
                 // particle effect for bullet
                 GameObject effect = Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
-                Destroy(effect, 2f);
+                Destroy(effect, 1f);
 
                 // destroy particle after hitstop
                 StartCoroutine(WaitForDestroy());
@@ -63,6 +63,7 @@ public class Bullet : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
         Destroy(gameObject.transform.GetChild(0).gameObject);
+        Destroy(gameObject.transform.GetChild(1).gameObject);
 
         while(Time.timeScale != 1 || !knockBackDone){
             
