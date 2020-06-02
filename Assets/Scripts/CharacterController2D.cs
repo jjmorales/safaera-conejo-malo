@@ -14,6 +14,7 @@ public class CharacterController2D : MonoBehaviour
 
 						
 	// misc
+	public Animator animator;
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
@@ -74,6 +75,7 @@ public class CharacterController2D : MonoBehaviour
 		{
 			if (colliders[i].gameObject.layer == m_WhatIsGroundIntValue)
 			{
+				if(animator) animator.SetBool("Jump", false);
 				m_Grounded = true;
 				// if (!wasGrounded) OnLandEvent.Invoke();
 			}
@@ -82,7 +84,6 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Update(){
 
-		Debug.Log(m_Grounded);
 		if(m_Rigidbody2D.velocity.y < 0){
 			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
 		}else if(m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("Jump")){
@@ -105,12 +106,10 @@ public class CharacterController2D : MonoBehaviour
 			if (hitPos.normal.x != 0){ // check if the wall collided on the sides
 				if(!m_Grounded){
 					m_Grounded = false; // boolean to prevent player from being able to jump
-					print("wall");
 				}
 			}else if (hitPos.normal.y > 0) // check if its collided on top 
 			{
 				m_Grounded = true;
-				print("grounded");
 			}
 			else m_Grounded = false;
 		}

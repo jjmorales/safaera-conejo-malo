@@ -43,6 +43,8 @@ public class Enemy : MonoBehaviour
         if(confetti){
         this.GetComponent<ConfettiPoints>().spawnDrop();
         }
+
+        Destroy(gameObject.GetComponent<Patrol>());
         animator.SetTrigger("Die");
         Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
     }
