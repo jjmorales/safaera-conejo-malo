@@ -8,16 +8,17 @@ public class Enemy : MonoBehaviour
 
     public int maxHealth = 100;
     public int AttackDamage = 20;
-    public float speed = 2f;
     public bool confetti = false;
-    int currHealth;
-    PointSystem ps;
+    private Animator animator;
+    private int currHealth;
+    private PointSystem ps;
 
     // Start is called before the first frame update
     void Start()
     {
         currHealth = maxHealth;
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
+        animator = this.gameObject.GetComponent<Animator>();
 
     
     }
@@ -42,7 +43,8 @@ public class Enemy : MonoBehaviour
         if(confetti){
         this.GetComponent<ConfettiPoints>().spawnDrop();
         }
-        Destroy(this.gameObject);
+        animator.SetTrigger("Die");
+        Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
     }
 
     // tint enemy red on hit

@@ -5,11 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstarPathfindingProject", "AstarPathfindingProject.csproj", "{E4E6844F-25FF-19AD-39BD-B6E9A70CDF9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras", "Unity.2D.Tilemap.Extras.csproj", "{BDE87E32-A75E-CD66-9172-F091297722B5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstarPathfindingProjectEditor", "AstarPathfindingProjectEditor.csproj", "{1B9440F4-6914-006A-BE46-B8DEC245F651}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.2D.Tilemap.Extras.Editor", "Unity.2D.Tilemap.Extras.Editor.csproj", "{CA022969-8830-F908-5D71-080D2ED32385}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageToolsEditor", "PackageToolsEditor.csproj", "{710FEC30-BBEF-2802-E3BC-35F1870C0019}"
 EndProject
@@ -27,18 +23,10 @@ Global
 		{E4E6844F-25FF-19AD-39BD-B6E9A70CDF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4E6844F-25FF-19AD-39BD-B6E9A70CDF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4E6844F-25FF-19AD-39BD-B6E9A70CDF9D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BDE87E32-A75E-CD66-9172-F091297722B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BDE87E32-A75E-CD66-9172-F091297722B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BDE87E32-A75E-CD66-9172-F091297722B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BDE87E32-A75E-CD66-9172-F091297722B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B9440F4-6914-006A-BE46-B8DEC245F651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B9440F4-6914-006A-BE46-B8DEC245F651}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B9440F4-6914-006A-BE46-B8DEC245F651}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B9440F4-6914-006A-BE46-B8DEC245F651}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA022969-8830-F908-5D71-080D2ED32385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA022969-8830-F908-5D71-080D2ED32385}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA022969-8830-F908-5D71-080D2ED32385}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA022969-8830-F908-5D71-080D2ED32385}.Release|Any CPU.Build.0 = Release|Any CPU
 		{710FEC30-BBEF-2802-E3BC-35F1870C0019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{710FEC30-BBEF-2802-E3BC-35F1870C0019}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{710FEC30-BBEF-2802-E3BC-35F1870C0019}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -11,12 +11,16 @@ public class Patrol : MonoBehaviour
     public float chaseSpeed;
     public bool knockedBack = false;
     public Transform groundDetection;
-   
+    
     // private vars
+    Animator animator;
     bool movingRight = true;
     bool chase = false;
     bool inSight = false;
 
+    private void Start(){
+        animator = this.gameObject.GetComponent<Animator>();
+    }
 
     private void FixedUpdate(){
 
@@ -25,10 +29,12 @@ public class Patrol : MonoBehaviour
                 rb.MovePosition((Vector2)transform.position + ((Vector2)transform.right * chaseSpeed * Time.deltaTime));
 
                 // update facing direction
-                if(transform.position.x < GameObject.FindGameObjectWithTag("Player").transform.position.x){
-                    movingRight = true;
-                }else if(transform.position.x > GameObject.FindGameObjectWithTag("Player").transform.position.x){
-                    movingRight = false;
+                if(GameObject.FindGameObjectWithTag("Player")){
+                    if(transform.position.x < GameObject.FindGameObjectWithTag("Player").transform.position.x){
+                        movingRight = true;
+                    }else if(transform.position.x > GameObject.FindGameObjectWithTag("Player").transform.position.x){
+                        movingRight = false;
+                    }
                 }
             }else{  // patrol platform
                 rb.velocity = transform.right * speed * Time.deltaTime;
@@ -38,6 +44,7 @@ public class Patrol : MonoBehaviour
 
     private void Update()
     {
+        animator.SetBool("Chase", chase);
 
         // chase reset on timer
         if(Time.time - lastSeen >= 3){
@@ -81,6 +88,7 @@ public class Patrol : MonoBehaviour
             }
         }
 
+
         spriteCheck();  // fix sprite rotation
     }
 
@@ -111,6 +119,10 @@ public class Patrol : MonoBehaviour
         if(col.gameObject.transform.tag == "PlayerAttack" || col.gameObject.transform.tag == "Player"){
             chase = true;
             lastSeen = Time.time;
+        }
+
+        if(!chase && col.gameObject.transform.tag == "Enemy"){
+            changeDirection();
         }
     }
 

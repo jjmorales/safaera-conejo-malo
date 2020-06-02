@@ -10,7 +10,7 @@ Material:
   m_Name: Background
   m_Shader: {fileID: -6465566751694194690, guid: d7872d32bddba4f0b99b7c55df65e434,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -30,4 +30,4 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_C21934E8: {r: 0, g: 0, b: 0, a: 0}
+    - Color_C21934E8: {r: 1.0592737, g: 0, b: 0.66551226, a: 0}

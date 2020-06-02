@@ -24,12 +24,12 @@ public class CharacterController2D : MonoBehaviour
 
 	// collider checks
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
-	[SerializeField] private int m_WhatIsGroundIntValue;					// int value for above
+	[SerializeField] private int m_WhatIsGroundIntValue;						// int value for above
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
 
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+	const float k_GroundedRadius = .1f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
@@ -66,8 +66,6 @@ public class CharacterController2D : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		bool wasGrounded = m_Grounded;
-		//m_Grounded = false;
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -77,14 +75,14 @@ public class CharacterController2D : MonoBehaviour
 			if (colliders[i].gameObject.layer == m_WhatIsGroundIntValue)
 			{
 				m_Grounded = true;
-				if (!wasGrounded)
-					OnLandEvent.Invoke();
+				// if (!wasGrounded) OnLandEvent.Invoke();
 			}
 		}
 	}
 
 	private void Update(){
 
+		Debug.Log(m_Grounded);
 		if(m_Rigidbody2D.velocity.y < 0){
 			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
 		}else if(m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("Jump")){
@@ -98,6 +96,24 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		
+	}
+
+	private void OnCollisionStay2D(Collision2D collision)
+	{
+		foreach (ContactPoint2D hitPos in collision.contacts)
+		{
+			if (hitPos.normal.x != 0){ // check if the wall collided on the sides
+				if(!m_Grounded){
+					m_Grounded = false; // boolean to prevent player from being able to jump
+					print("wall");
+				}
+			}else if (hitPos.normal.y > 0) // check if its collided on top 
+			{
+				m_Grounded = true;
+				print("grounded");
+			}
+			else m_Grounded = false;
+		}
 	}
 
 
