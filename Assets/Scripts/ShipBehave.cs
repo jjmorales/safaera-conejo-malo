@@ -13,7 +13,7 @@ public class ShipBehave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, deathDelay);
+        //Destroy(gameObject, deathDelay);
     }
 
     // Update is called once per frame
