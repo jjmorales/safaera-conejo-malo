@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     {
         currHealth = maxHealth;
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
-        animator = this.gameObject.GetComponent<Animator>();
+        if(this.gameObject.GetComponent<Animator>() != null) animator = this.gameObject.GetComponent<Animator>();
 
     
     }
@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
     }
 
     void die(){
+        float dtime = 0;
         ps.addPointsKill();
 
         if(confetti){
@@ -45,8 +46,12 @@ public class Enemy : MonoBehaviour
         }
 
         Destroy(gameObject.GetComponent<Patrol>());
-        animator.SetTrigger("Die");
-        Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+        if(animator){
+            animator.SetTrigger("Die");
+            dtime = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+        }
+
+        Destroy (gameObject, dtime);
     }
 
     // tint enemy red on hit

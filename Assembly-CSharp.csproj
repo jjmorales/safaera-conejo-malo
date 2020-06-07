@@ -79,6 +79,8 @@
      <Compile Include="Assets\Scripts\LifeBar.cs" />
      <Compile Include="Assets\Scripts\MonkeySwing.cs" />
      <Compile Include="Assets\Scripts\MoveIndef.cs" />
+     <Compile Include="Assets\Scripts\MoveLeft.cs" />
+     <Compile Include="Assets\Scripts\MoveUp.cs" />
      <Compile Include="Assets\Scripts\MultipleRandomSpawn.cs" />
      <Compile Include="Assets\Scripts\Parallax.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
