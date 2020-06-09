@@ -11,7 +11,7 @@ public class GroundObstacle : MonoBehaviour
      PointSystem pointSystem;
     Renderer m_Renderer;
     bool working = true;
-    public int AttackDamage = 1;
+    public int AttackDamage = 0;
     bool point = true;
 
 

@@ -8,21 +8,28 @@ public class LifeBar : MonoBehaviour
     public GameObject [] healthPoints;
     public Sprite full;
     public Sprite hollow;
-    int currentHealth = 4;
+    int currentHealth;
+    Player player;
+
+
+    void Start(){
+        currentHealth = healthPoints.Length;
+    }
 
     public void hit(){
         if(currentHealth > 0){
-        healthPoints[currentHealth - 1].GetComponent<SpriteRenderer>().sprite = hollow;
-        currentHealth--;
+            healthPoints[currentHealth - 1].GetComponent<SpriteRenderer>().sprite = hollow;
+            currentHealth--;
         }
+
     }
 
     public void heal(){
-        if(currentHealth < 4){
-        currentHealth++;
-        healthPoints[currentHealth - 1].GetComponent<SpriteRenderer>().sprite = full;
+        if(currentHealth < healthPoints.Length){
+            currentHealth++;
+            healthPoints[currentHealth - 1].GetComponent<SpriteRenderer>().sprite = full;
+        }else{
+            GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>().customPoint(100);
         }
-
-
     }
 }

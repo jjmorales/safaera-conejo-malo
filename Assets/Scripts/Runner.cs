@@ -31,8 +31,6 @@ public class Runner : MonoBehaviour
         if(Input.GetKeyDown("w")){
             animator.SetBool("Jump", true);
             jump = true;
-        }else if(Input.GetKeyUp("w")){
-            animator.SetBool("Jump", false);
         }
 
         if(maxSpeed <= speed){
@@ -52,8 +50,9 @@ public class Runner : MonoBehaviour
     {
 
         controller.Move(speed * Time.fixedDeltaTime, false, jump);
-
         jump = false;
+        animator.SetBool("Jump", false);
+
     }
 
     public IEnumerator slowDown(int slowAmount, float slowTime){

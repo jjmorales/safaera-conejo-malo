@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2367810640351325862}
   - component: {fileID: 9201571726597952359}
   - component: {fileID: 8827652062670892527}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4768,9 +4768,9 @@ GameObject:
   - component: {fileID: 7503978924317693683}
   - component: {fileID: 7503978924317693682}
   - component: {fileID: 8384291758632408128}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flydino
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4874,7 +4874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  AttackDamage: 20
+  AttackDamage: 1
   confetti: 0
 --- !u!61 &7503978924317693682
 BoxCollider2D:

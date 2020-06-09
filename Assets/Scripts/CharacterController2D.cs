@@ -83,7 +83,6 @@ public class CharacterController2D : MonoBehaviour
 	}
 
 	private void Update(){
-
 		if(m_Rigidbody2D.velocity.y < 0){
 			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
 		}else if(m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("Jump")){

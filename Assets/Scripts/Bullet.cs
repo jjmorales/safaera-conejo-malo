@@ -60,10 +60,13 @@ public class Bullet : MonoBehaviour
     }
 
     IEnumerator WaitForDestroy(){   // wait for time to be reset from hit stop effect
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        Destroy(gameObject.transform.GetChild(0).gameObject);
-        Destroy(gameObject.transform.GetChild(1).gameObject);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;  // remove sprite
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;    // remove collider
+
+        if (transform.childCount > 0){
+            Destroy(gameObject.transform.GetChild(0).gameObject);
+            Destroy(gameObject.transform.GetChild(1).gameObject);
+        }
 
         while(Time.timeScale != 1 || !knockBackDone){
             

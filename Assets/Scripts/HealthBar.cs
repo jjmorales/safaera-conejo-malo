@@ -10,6 +10,8 @@ public class HealthBar : MonoBehaviour
     public Image fill;
 
     public void setMaxHealth(int health){
+
+
         slider.maxValue = health;
         slider.value = health;
 

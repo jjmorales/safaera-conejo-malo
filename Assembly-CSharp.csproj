@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\CamClamp.cs" />
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
      <Compile Include="Assets\Scripts\ConfettiPoints.cs" />
+     <Compile Include="Assets\Scripts\DropHealth.cs" />
      <Compile Include="Assets\Scripts\DynamicSceneCamera.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
@@ -77,12 +78,14 @@
      <Compile Include="Assets\Scripts\Knockback.cs" />
      <Compile Include="Assets\Scripts\LevelGeneration.cs" />
      <Compile Include="Assets\Scripts\LifeBar.cs" />
+     <Compile Include="Assets\Scripts\LifeBarBonus.cs" />
      <Compile Include="Assets\Scripts\MonkeySwing.cs" />
      <Compile Include="Assets\Scripts\MoveIndef.cs" />
      <Compile Include="Assets\Scripts\MoveLeft.cs" />
      <Compile Include="Assets\Scripts\MoveUp.cs" />
      <Compile Include="Assets\Scripts\MultipleRandomSpawn.cs" />
      <Compile Include="Assets\Scripts\Parallax.cs" />
+     <Compile Include="Assets\Scripts\PassCheck.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />

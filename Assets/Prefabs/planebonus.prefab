@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1107743449916367565}
   - component: {fileID: 3943783911692075263}
   - component: {fileID: -1284512027004438253}
+  - component: {fileID: 2844768495602129774}
   m_Layer: 0
   m_Name: planebonus
   m_TagString: Untagged
@@ -153,7 +154,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoints: []
   spawnee: {fileID: 0}
+  startFrame: 0
   cycleSpawn: 0
+--- !u!114 &2844768495602129774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107743449916367564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9410be63a20334157b3a93f135601640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drop: {fileID: 423231804078357114, guid: c12c9ab6336114e189148e9aa92dce23, type: 3}
+  dropTime: 2
+  dropPoint: {fileID: 2081900916955545935}
 --- !u!1 &3032706576447980349
 GameObject:
   m_ObjectHideFlags: 0
