@@ -229,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523915934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0289874, y: -3.0679998, z: -16.7}
+  m_LocalPosition: {x: 2.0295234, y: -3.0679998, z: -16.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2051167884}
@@ -344,7 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 701856072}
   - component: {fileID: 701856073}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757387275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.41, z: 0}
+  m_LocalPosition: {x: 0, y: -0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1959685797}
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 910931779}
   - component: {fileID: 910931781}
   - component: {fileID: 910931780}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,6 @@ GameObject:
   - component: {fileID: 927097759}
   - component: {fileID: 927097758}
   - component: {fileID: 927097760}
-  - component: {fileID: 927097761}
   m_Layer: 8
   m_Name: trexito
   m_TagString: Enemy
@@ -708,21 +707,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.0055412054}
   serializedVersion: 2
   m_Radius: 0.2600838
---- !u!114 &927097761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927097754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a90ffb67885a74cf290eea1aa7d3c40f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  AttackDamage: 100
-  confetti: 0
 --- !u!1 &970813821
 GameObject:
   m_ObjectHideFlags: 3
@@ -818,7 +802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986020176}
   - component: {fileID: 986020177}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-5 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -899,7 +883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1058912920}
   - component: {fileID: 1058912921}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +995,7 @@ GameObject:
   - component: {fileID: 1408257192}
   - component: {fileID: 1408257194}
   - component: {fileID: 1408257193}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1108,7 +1092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1442112926}
   - component: {fileID: 1442112927}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1190,7 +1174,7 @@ GameObject:
   - component: {fileID: 1445400160}
   - component: {fileID: 1445400162}
   - component: {fileID: 1445400161}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1317,7 +1301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1584597322}
   - component: {fileID: 1584597323}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1398,7 +1382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1730931838}
   - component: {fileID: 1730931839}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1578,7 +1562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1795484732}
   - component: {fileID: 1795484733}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1659,7 +1643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1874058233}
   - component: {fileID: 1874058234}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1810,7 +1794,7 @@ GameObject:
   - component: {fileID: 1918156411}
   - component: {fileID: 1918156413}
   - component: {fileID: 1918156412}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: plx-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2075,7 +2059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ab5b915a93b1418e9f02f44c3d5498c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 100
   healthBarUI: 0
 --- !u!114 &1959685801
 MonoBehaviour:
@@ -2092,8 +2076,8 @@ MonoBehaviour:
   m_JumpForce: 450
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
-  animator: {fileID: 0}
-  m_CrouchSpeed: 0.36
+  animator: {fileID: 1959685793}
+  m_CrouchSpeed: 0.34
   m_MovementSmoothing: 0.056
   m_AirControl: 0
   m_FastCrouch: 0
@@ -2237,7 +2221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041549695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0289874, y: -3.0679998, z: -16.7}
+  m_LocalPosition: {x: 2.0295234, y: -3.0679998, z: -16.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 970813822}
@@ -2568,6 +2552,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6773638350784727123, guid: a7834d962356d484ba3d80235a445020,
         type: 3}
+    - target: {fileID: 6773638350474408640, guid: a7834d962356d484ba3d80235a445020,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773638350474408654, guid: a7834d962356d484ba3d80235a445020,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6773638350474408654, guid: a7834d962356d484ba3d80235a445020,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6773638350784727121, guid: a7834d962356d484ba3d80235a445020,
         type: 3}
       propertyPath: m_LocalPosition.x
