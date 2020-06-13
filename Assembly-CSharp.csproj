@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\CamClamp.cs" />
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
      <Compile Include="Assets\Scripts\ConfettiPoints.cs" />
+     <Compile Include="Assets\Scripts\DontGoThroughThings.cs" />
      <Compile Include="Assets\Scripts\DropHealth.cs" />
      <Compile Include="Assets\Scripts\DynamicSceneCamera.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
@@ -97,10 +98,12 @@
      <Compile Include="Assets\Scripts\RotateWeapon.cs" />
      <Compile Include="Assets\Scripts\Runner.cs" />
      <Compile Include="Assets\Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\Scripts\Shark.cs" />
      <Compile Include="Assets\Scripts\ShipBehave.cs" />
      <Compile Include="Assets\Scripts\SideScroll.cs" />
      <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
      <Compile Include="Assets\Scripts\SquidBomb.cs" />
+     <Compile Include="Assets\Scripts\Surf.cs" />
      <None Include="Assets\Fonts\press-start-2p-font\misc\FONTLOG-e017.txt" />
      <None Include="Assets\CodeMonkey\README.txt" />
      <None Include="Assets\Fonts\press-start-2p-font\misc\LICENSE-65f9.txt" />
