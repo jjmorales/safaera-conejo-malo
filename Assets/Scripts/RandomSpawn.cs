@@ -8,7 +8,7 @@ public class RandomSpawn : MonoBehaviour
 
     public GameObject spawnee;
     public Vector2 randomSpawnRange;
-    private float spawnTime = 0.0f;
+    public float spawnTime = 0.0f;
    
     void Update()
     {

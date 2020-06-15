@@ -233,7 +233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 227942532}
   spawnee: {fileID: 410035180684136522, guid: faeeb17e8d0404ed5963695ba23a9453, type: 3}
-  randomSpawnRange: {x: 1, y: 3}
+  randomSpawnRange: {x: 1, y: 2.5}
+  spawnTime: 0
 --- !u!4 &227942532
 Transform:
   m_ObjectHideFlags: 0
@@ -423,6 +424,7 @@ MonoBehaviour:
   animator: {fileID: 419938211}
   speed: 10
   spawnPoint: {fileID: 1470984743}
+  splash: {fileID: 2041218194951449845, guid: b0a55ba642ed443879d19be563169cc7, type: 3}
 --- !u!1 &1103428225
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,8 +568,8 @@ BuoyancyEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 3639
-  m_SurfaceLevel: 1
-  m_Density: 2
+  m_SurfaceLevel: 0.89
+  m_Density: 1.43
   m_LinearDrag: 5
   m_AngularDrag: 5
   m_FlowAngle: 0

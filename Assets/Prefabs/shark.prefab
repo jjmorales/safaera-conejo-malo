@@ -180,3 +180,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 8
   returnGravity: 0.5
+  sinkSpeed: 4

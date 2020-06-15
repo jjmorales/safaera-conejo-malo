@@ -6,12 +6,15 @@ public class Shark : MonoBehaviour
 {
 
     public float thrust;
-    public float returnGravity;
+    public float sinkSpeed;
+
+    int hitCount = 0;
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,17 +27,16 @@ public class Shark : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
   
         if(col.gameObject.tag == "Player"){
-            //StartCoroutine("gravityAdjust");
-            //col.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, thrust), ForceMode2D.Impulse);
-            col.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, thrust);
+            hitCount++;
+            if(hitCount == 1){
+                animator.SetTrigger("Hit");
+                col.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, thrust);
+            }else if(hitCount == 2){
+                col.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, thrust);
+                gameObject.GetComponent<Rigidbody2D>().gravityScale = sinkSpeed;
+            }
+
         }
     }
-
-    // IEnumerator gravityAdjust(){
-    //     GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().gravityScale = 0;
-    //     yield return new WaitForSeconds(returnGravity);
-    //             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().gravityScale = 2;
-
-    // }
     
 }

@@ -9,6 +9,7 @@ public class Surf : MonoBehaviour
     public Animator animator;
     public float speed = 40f;
     public GameObject spawnPoint;
+    public GameObject splash;
     
     float h;
     float v;
@@ -17,6 +18,7 @@ public class Surf : MonoBehaviour
 
     void Start(){
         rb = gameObject.GetComponent<Rigidbody2D>();
+        StartCoroutine("respawn");
     }
 
     void Update()
@@ -31,13 +33,7 @@ public class Surf : MonoBehaviour
 
         if(col.gameObject.tag == "Floor"){
             //splash animation
-
-            //spawn at top of map
-            rb.position = spawnPoint.transform.position;
-
-            //velocity and gravity set to 0
-            rb.gravityScale = 0;
-            rb.velocity = new Vector2(0,0);
+            Instantiate(splash, GameObject.FindGameObjectWithTag("Player").gameObject.transform.position, GameObject.FindGameObjectWithTag("Player").gameObject.transform.rotation);
 
             //flash coroutine
             StartCoroutine("respawn");
@@ -48,6 +44,13 @@ public class Surf : MonoBehaviour
     }
 
     public IEnumerator respawn(){
+        //spawn at top of map
+        rb.position = spawnPoint.transform.position;
+
+        //velocity and gravity set to 0
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(0,0);
+
         gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;   // spawn
         yield return new WaitForSeconds(2f);
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal
