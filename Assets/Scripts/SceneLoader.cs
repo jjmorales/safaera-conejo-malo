@@ -21,18 +21,15 @@ public class SceneLoader : MonoBehaviour
     public void LoadLevel5(){
         SceneManager.LoadScene(5);
     }
-    public void LoadLevel6(){
-        SceneManager.LoadScene(6);
-    }
     public void LoadStartMenu(){
         SceneManager.LoadScene(0);
     }
 
     public void LoadLevelSelection(){
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(7);
     }
 
     public void LoadCredits(){
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6);
     }
 }

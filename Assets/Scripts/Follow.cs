@@ -43,9 +43,9 @@ public class Follow : MonoBehaviour
         if(endGameCatch && col.gameObject.tag == "Player"){
             speed = 0;
 
+            StartCoroutine(col.gameObject.GetComponent<Player>().Die());
             // end game
             col.GetComponent<Runner>().speed = 0;
-            col.GetComponent<Runner>().die();
             animator.SetTrigger("Catch");
         }
     }

@@ -11,13 +11,16 @@ public class Surf : MonoBehaviour
     public GameObject spawnPoint;
     public GameObject splash;
     
+    
     float h;
     float v;
     Rigidbody2D rb;
+    SceneLoader sceneLoader;
 
 
     void Start(){
         rb = gameObject.GetComponent<Rigidbody2D>();
+        sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         StartCoroutine("respawn");
     }
 
@@ -35,12 +38,28 @@ public class Surf : MonoBehaviour
             //splash animation
             Instantiate(splash, GameObject.FindGameObjectWithTag("Player").gameObject.transform.position, GameObject.FindGameObjectWithTag("Player").gameObject.transform.rotation);
 
+            GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().hit();
+
+            if(GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().currentHealth == 0){
+                StartCoroutine("Die");
+            }else{
             //flash coroutine
             StartCoroutine("respawn");
+            }
         }
     }
     void FixedUpdate(){
         rb.velocity = new Vector3 (h * speed, rb.velocity.y, v * speed);
+    }
+
+    public IEnumerator Die(){
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        
+
+
+        yield return new WaitForSeconds(1);
+
+        sceneLoader.LoadLevelSelection();
     }
 
     public IEnumerator respawn(){

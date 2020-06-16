@@ -34,13 +34,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Die(){
+    public IEnumerator Die(){
         if(healthBar) healthBar.setHealth(0);
-        //sceneLoader.LoadLevelSelection();
 
         // play death animation
         gameObject.GetComponent<Animator>().SetTrigger("Die");
-        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
+
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+
+        yield return new WaitForSeconds(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
+
+        sceneLoader.LoadLevelSelection();
+        
     }
 
     public void TakeDamage(int dmg){
@@ -52,7 +57,7 @@ public class Player : MonoBehaviour
             StartCoroutine(RedOnHit());
         }
 
-        if(currHealth <= 0) Die();
+        if(currHealth <= 0) StartCoroutine("Die");
     }
 
     public void heal(int healAmount){
@@ -69,6 +74,7 @@ public class Player : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal
         immune = false;
     }
+
 
     public IEnumerator PlayerImmune(){
         immune = true;

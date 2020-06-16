@@ -11,9 +11,8 @@ public class Portal : MonoBehaviour
         if(col.gameObject.tag == "Player"){
             animator.SetTrigger("enterPortal");
             Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
-            col.GetComponent<Player>().Die();
+            StartCoroutine(col.GetComponent<Player>().Die());
             Debug.Log(Time.time);
-            Destroy(col.gameObject);
         }
     }
 }

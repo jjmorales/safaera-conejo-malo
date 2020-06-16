@@ -69,10 +69,4 @@ public class Runner : MonoBehaviour
         InvokeRepeating("ramp", Time.time + resetTime, speedUpRate);
         
     }
-
-    public void die(){
-        animator.SetTrigger("Die");
-        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
-        //sceneLoader.LoadLevelSelection();
-    }
 }

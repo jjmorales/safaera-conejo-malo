@@ -8,7 +8,7 @@ public class LifeBar : MonoBehaviour
     public GameObject [] healthPoints;
     public Sprite full;
     public Sprite hollow;
-    int currentHealth;
+    public int currentHealth;
     Player player;
 
 
@@ -21,7 +21,6 @@ public class LifeBar : MonoBehaviour
             healthPoints[currentHealth - 1].GetComponent<SpriteRenderer>().sprite = hollow;
             currentHealth--;
         }
-
     }
 
     public void heal(){
