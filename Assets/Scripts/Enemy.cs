@@ -62,6 +62,10 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal
     }
 
+    public int getEnemyHealth(){
+        return currHealth;
+    }
+
 
     // void approachPlayer(){
     //     transform.position = Vector2.MoveTowards(transform.position, targetChase.transform.position, Time.deltaTime * speed);

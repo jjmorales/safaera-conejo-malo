@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\BlasterShot.cs" />
      <Compile Include="Assets\Scripts\Bonus.cs" />
      <Compile Include="Assets\Scripts\Boost.cs" />
+     <Compile Include="Assets\Scripts\BossBehave.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\CamClamp.cs" />
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
@@ -80,6 +81,8 @@
      <Compile Include="Assets\Scripts\LevelGeneration.cs" />
      <Compile Include="Assets\Scripts\LifeBar.cs" />
      <Compile Include="Assets\Scripts\LifeBarBonus.cs" />
+     <Compile Include="Assets\Scripts\LookAt2D.cs" />
+     <Compile Include="Assets\Scripts\Minion.cs" />
      <Compile Include="Assets\Scripts\MonkeySwing.cs" />
      <Compile Include="Assets\Scripts\MoveIndef.cs" />
      <Compile Include="Assets\Scripts\MoveLeft.cs" />
@@ -293,6 +296,12 @@
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
         <HintPath>/Users/jonathanmorales/Desktop/safaera-conejo-malo/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.3.15f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+        <HintPath>/Applications/Unity/Hub/Editor/2019.3.15f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>/Applications/Unity/Hub/Editor/2019.3.15f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

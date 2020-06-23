@@ -20,7 +20,6 @@ public class PlayerMovement2D : MonoBehaviour
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
-
         // update animator
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
         //animator.SetBool("isCrouched", crouch);
