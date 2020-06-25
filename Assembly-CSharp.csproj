@@ -55,6 +55,7 @@
      <Compile Include="Assets\CodeMonkey\Utils\World_Bar.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\World_Mesh.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\World_Sprite.cs" />
+     <Compile Include="Assets\Comet.cs" />
      <Compile Include="Assets\Scripts\BlasterShot.cs" />
      <Compile Include="Assets\Scripts\Bonus.cs" />
      <Compile Include="Assets\Scripts\Boost.cs" />
@@ -62,6 +63,7 @@
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\CamClamp.cs" />
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
+     <Compile Include="Assets\Scripts\CollisionDamage.cs" />
      <Compile Include="Assets\Scripts\ConfettiPoints.cs" />
      <Compile Include="Assets\Scripts\DontGoThroughThings.cs" />
      <Compile Include="Assets\Scripts\DropHealth.cs" />
@@ -71,6 +73,7 @@
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\FindClosest.cs" />
      <Compile Include="Assets\Scripts\FireRandom.cs" />
+     <Compile Include="Assets\Scripts\Fireball.cs" />
      <Compile Include="Assets\Scripts\FlightControls.cs" />
      <Compile Include="Assets\Scripts\FlightMovement.cs" />
      <Compile Include="Assets\Scripts\Follow.cs" />

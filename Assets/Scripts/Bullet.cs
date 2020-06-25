@@ -47,8 +47,10 @@ public class Bullet : MonoBehaviour
                 if(knockBack) knockBackDone = false;
 
                 // particle effect for bullet
-                GameObject effect = Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
-                Destroy(effect, 0.2f);
+                if(particle != null){
+                    GameObject effect = Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
+                    Destroy(effect, 0.2f);
+                }
 
                 // destroy particle after hitstop
                 StartCoroutine(WaitForDestroy());
@@ -60,12 +62,12 @@ public class Bullet : MonoBehaviour
     }
 
     IEnumerator WaitForDestroy(){   // wait for time to be reset from hit stop effect
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;  // remove sprite
+        if(gameObject.GetComponent<SpriteRenderer>()) gameObject.GetComponent<SpriteRenderer>().enabled = false;  // remove sprite
         gameObject.GetComponent<CircleCollider2D>().enabled = false;    // remove collider
 
         if (transform.childCount > 0){
-            Destroy(gameObject.transform.GetChild(0).gameObject);
-            Destroy(gameObject.transform.GetChild(1).gameObject);
+            if(gameObject.transform.GetChild(0) != null) Destroy(gameObject.transform.GetChild(0).gameObject);
+            if(gameObject.transform.GetChild(1) != null) Destroy(gameObject.transform.GetChild(1).gameObject);
         }
 
         while(Time.timeScale != 1 || !knockBackDone){

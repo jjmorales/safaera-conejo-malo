@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8598746300319269532}
   - component: {fileID: -7108868521525568653}
   - component: {fileID: -1739655764587083765}
+  - component: {fileID: -1026590165349551318}
   m_Layer: 0
   m_Name: minion2
   m_TagString: Enemy
@@ -54,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 818077927
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 2072640275240368233, guid: 1ac59370e8a9e4c8e81f8da0abc9bc9b,
     type: 3}
@@ -170,3 +171,18 @@ CircleCollider2D:
   m_Offset: {x: -0.0046442035, y: 0}
   serializedVersion: 2
   m_Radius: 0.21825543
+--- !u!114 &-1026590165349551318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243572261587892378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90ffb67885a74cf290eea1aa7d3c40f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  AttackDamage: 20
+  confetti: 0

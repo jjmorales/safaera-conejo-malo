@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
 
     void die(){
         float dtime = 0;
+        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
         ps.addPointsKill();
 
         if(confetti){
@@ -48,7 +49,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject.GetComponent<Patrol>());
         if(animator){
             animator.SetTrigger("Die");
-            dtime = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+            dtime = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.2f;
         }
 
         Destroy (gameObject, dtime);
@@ -66,9 +67,4 @@ public class Enemy : MonoBehaviour
         return currHealth;
     }
 
-
-    // void approachPlayer(){
-    //     transform.position = Vector2.MoveTowards(transform.position, targetChase.transform.position, Time.deltaTime * speed);
-
-    // }
 }

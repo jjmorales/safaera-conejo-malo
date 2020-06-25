@@ -12,6 +12,8 @@ TagManager:
   - Destroy
   - Level
   - PlayerAttack
+  - BossHP
+  - Lights
   layers:
   - Default
   - TransparentFX
