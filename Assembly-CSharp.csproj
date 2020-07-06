@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\CharacterController2D.cs" />
      <Compile Include="Assets\Scripts\CollisionDamage.cs" />
      <Compile Include="Assets\Scripts\ConfettiPoints.cs" />
+     <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\DontGoThroughThings.cs" />
      <Compile Include="Assets\Scripts\DropHealth.cs" />
      <Compile Include="Assets\Scripts\DynamicSceneCamera.cs" />
@@ -103,6 +104,7 @@
      <Compile Include="Assets\Scripts\RepeatBackground.cs" />
      <Compile Include="Assets\Scripts\RotateWeapon.cs" />
      <Compile Include="Assets\Scripts\Runner.cs" />
+     <Compile Include="Assets\Scripts\SceneDelay.cs" />
      <Compile Include="Assets\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\Shark.cs" />
      <Compile Include="Assets\Scripts\ShipBehave.cs" />

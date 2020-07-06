@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
 
-        sceneLoader.LoadLevelSelection();
+        Sc;
         
     }
 

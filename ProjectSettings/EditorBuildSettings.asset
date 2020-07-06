@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/game scenes/start.unity
+    path: Assets/Scenes/game scenes/beta/start.unity
     guid: def22dc8382904eeabd806084dfe0e18
   - enabled: 1
     path: Assets/Scenes/game scenes/beta/safari.unity
