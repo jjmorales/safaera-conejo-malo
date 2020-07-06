@@ -11,7 +11,7 @@ public class MoveUp : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 6);
+        Destroy(gameObject, 10);
     }
 
     // Update is called once per frame
