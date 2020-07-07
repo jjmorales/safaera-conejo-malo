@@ -53,9 +53,10 @@ public class SceneLoader : MonoBehaviour
     }
 
     IEnumerator playTransition(){        
-        if(GameObject.FindGameObjectWithTag("Player")) Destroy(GameObject.FindGameObjectWithTag("Player").gameObject);
+        
         GameObject.FindGameObjectWithTag("Transition").GetComponent<VideoPlayer>().Play();
 
+        if(GameObject.FindGameObjectWithTag("Player")) Destroy(GameObject.FindGameObjectWithTag("Player").gameObject);
 
         yield return new WaitForSeconds(transitionTime);
 

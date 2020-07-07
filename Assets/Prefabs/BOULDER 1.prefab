@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathImage: {fileID: 0}
-  slowAmount: 20
+  slowAmount: 10
   slowTime: 1
   AttackDamage: 1
 --- !u!1001 &3401430107634421832

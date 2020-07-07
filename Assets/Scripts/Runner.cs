@@ -51,8 +51,6 @@ public class Runner : MonoBehaviour
 
         controller.Move(speed * Time.fixedDeltaTime, false, jump);
         jump = false;
-        animator.SetBool("Jump", false);
-
     }
 
     public IEnumerator slowDown(int slowAmount, float slowTime){
@@ -70,5 +68,11 @@ public class Runner : MonoBehaviour
 
         InvokeRepeating("ramp", Time.time + resetTime, speedUpRate);
         
+    }
+
+    void OnCollisionEnter2D(Collision2D col){
+        if(col.gameObject.tag == "Floor"){
+            animator.SetBool("Jump", false);
+        }
     }
 }
