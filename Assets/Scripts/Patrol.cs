@@ -18,6 +18,7 @@ public class Patrol : MonoBehaviour
     bool chase = false;
     bool inSight = false;
     bool hit = false;
+    bool dead = false;
 
     GameObject player;
 
@@ -27,7 +28,7 @@ public class Patrol : MonoBehaviour
     }
 
     private void FixedUpdate(){
-        if(!hit){
+        if(!hit && !dead){
             if(chase){  // chase character
                 rb.MovePosition((Vector2)transform.position + ((Vector2)transform.right * chaseSpeed * Time.deltaTime));
 
@@ -47,6 +48,10 @@ public class Patrol : MonoBehaviour
 
     private void Update()
     {
+        if(gameObject.GetComponent<Enemy>().getEnemyHealth() <= 0){
+            dead = true;
+        }
+
         animator.SetBool("Chase", chase);
 
         // chase reset on timer
@@ -133,13 +138,16 @@ public class Patrol : MonoBehaviour
     }
 
     IEnumerator stop(){
-        hit = true;
-        chase = false;
-        Vector2 difference = player.transform.position - gameObject.transform.position;
-                difference = transform.right * - thrust;
-                rb.AddForce(difference, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.5f);
 
+        if(!dead){
+            hit = true;
+            Vector2 difference = gameObject.transform.position - player.transform.position;
+            difference = transform.right * - thrust;
+            rb.AddForce(difference, ForceMode2D.Impulse);
+        }
+        
+        yield return new WaitForSeconds(0.5f);
+        chase = true;
         hit = false; 
     }    
 }

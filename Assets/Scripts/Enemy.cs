@@ -37,20 +37,23 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void die(){
-        Destroy(gameObject.GetComponent<Rigidbody2D>());
+    void die(){  
+        gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;      
+        gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        Destroy(gameObject.GetComponent<Patrol>());
+
         float dtime = 0;
-        gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
         ps.addPointsKill();
 
         if(confetti){
         this.GetComponent<ConfettiPoints>().spawnDrop();
         }
 
-        Destroy(gameObject.GetComponent<Patrol>());
         if(animator){
             animator.SetTrigger("Die");
-            dtime = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.2f;
+            dtime = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length - 0.1f;
         }
 
         Destroy (gameObject, dtime);
