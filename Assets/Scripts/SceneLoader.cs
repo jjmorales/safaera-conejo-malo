@@ -52,10 +52,10 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine("playTransition");
     }
 
-    IEnumerator playTransition(){
-        GameObject.FindGameObjectWithTag("Transition").GetComponent<VideoPlayer>().Play();
-        
+    IEnumerator playTransition(){        
         if(GameObject.FindGameObjectWithTag("Player")) Destroy(GameObject.FindGameObjectWithTag("Player").gameObject);
+        GameObject.FindGameObjectWithTag("Transition").GetComponent<VideoPlayer>().Play();
+
 
         yield return new WaitForSeconds(transitionTime);
 

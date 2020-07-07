@@ -21,8 +21,8 @@ EditorBuildSettings:
     path: Assets/Scenes/game scenes/beta/ocean.unity
     guid: 24d44afaa76d1419584d0b8e325f2b5e
   - enabled: 1
-    path: Assets/Scenes/game scenes/pyramids.unity
-    guid: e9b521fa7c57c456b955bca78f308bf2
+    path: Assets/Scenes/game scenes/beta/pyramids.unity
+    guid: 8f3146d32cb954873aa2db491006ac5a
   - enabled: 1
     path: Assets/Scenes/game scenes/credits.unity
     guid: e992ea1934d044ee8b41dac36de81eb0

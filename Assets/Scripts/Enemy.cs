@@ -38,11 +38,13 @@ public class Enemy : MonoBehaviour
     }
 
     void die(){  
-        gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;      
-        gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-        Destroy(gameObject.GetComponent<Patrol>());
+        if(gameObject.GetComponent<Rigidbody2D>()){
+            gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        }
+        if(gameObject.GetComponent<CircleCollider2D>()) gameObject.GetComponent<CircleCollider2D>().enabled = false;      
+        if(gameObject.GetComponent<Patrol>()) Destroy(gameObject.GetComponent<Patrol>());
 
         float dtime = 0;
         ps.addPointsKill();
@@ -53,7 +55,7 @@ public class Enemy : MonoBehaviour
 
         if(animator){
             animator.SetTrigger("Die");
-            dtime = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length - 0.1f;
+            dtime = this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
         }
 
         Destroy (gameObject, dtime);

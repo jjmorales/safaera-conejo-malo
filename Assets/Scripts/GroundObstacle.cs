@@ -23,14 +23,15 @@ public class GroundObstacle : MonoBehaviour
     }
 
     void Update(){
-        if(point == true && (gameObject.transform.position.x - GameObject.FindGameObjectWithTag("Player").transform.position.x) < 0){
+        if(GameObject.FindGameObjectWithTag("Player")){
+            if(point == true && (gameObject.transform.position.x - GameObject.FindGameObjectWithTag("Player").transform.position.x) < 0){
             Invoke("givePoint", 0.5f);
             point = false;
+            }
         }
     }
 
     void givePoint(){
-        //GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Animator>().SetTrigger("NewPoint");
         GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>().customPoint(1);
     }
 
@@ -43,16 +44,6 @@ public class GroundObstacle : MonoBehaviour
                 StartCoroutine(col.GetComponent<Runner>().slowDown(slowAmount, slowTime));
                 StartCoroutine(col.GetComponent<Player>().RedOnHit());
                 
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().TakeDamage(1);
-
-                // slow UI
-                //GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<Animator>().SetTrigger("Slow");
-                
-            }else{
-                if(deathImage){
-                this.GetComponent<SpriteRenderer>().sprite = deathImage;
-                }
-                pointSystem.addPointsKill();
             }
             working = false;
         }

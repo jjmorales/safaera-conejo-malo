@@ -16,6 +16,7 @@ TagManager:
   - Lights
   - Music
   - Transition
+  - Obstacle
   layers:
   - Default
   - TransparentFX

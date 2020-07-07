@@ -56,6 +56,8 @@ public class Runner : MonoBehaviour
     }
 
     public IEnumerator slowDown(int slowAmount, float slowTime){
+
+        Debug.Log("enter");
         CancelInvoke();
         mainEnemy.GetComponent<Follow>().chaseInc();
 

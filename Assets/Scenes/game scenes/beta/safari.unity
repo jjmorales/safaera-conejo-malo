@@ -713,7 +713,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d413a87d144054de7ad9ecb65d778f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1959685792}
   increments:
   - {fileID: 64100132}
   - {fileID: 1754992784}
@@ -2167,9 +2166,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   maxSpeed: 100
-  resetTime: 0.1
+  resetTime: 1
   speedUpRate: 0.5
-  rampUp: 15
+  rampUp: 20
   animator: {fileID: 1959685793}
   mainEnemy: {fileID: 927097754}
   controller: {fileID: 1959685801}
