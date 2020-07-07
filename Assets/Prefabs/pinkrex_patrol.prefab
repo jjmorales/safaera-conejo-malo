@@ -175,9 +175,8 @@ MonoBehaviour:
   rb: {fileID: 223948636692079735}
   lastSeen: 4
   chaseSpeed: 6
-  knockedBack: 0
   groundDetection: {fileID: 2102229638324765587}
-  animator: {fileID: 0}
+  thrust: 10
 --- !u!1 &2102229638324765586
 GameObject:
   m_ObjectHideFlags: 0

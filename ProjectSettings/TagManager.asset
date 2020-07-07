@@ -15,6 +15,7 @@ TagManager:
   - BossHP
   - Lights
   - Music
+  - Transition
   layers:
   - Default
   - TransparentFX

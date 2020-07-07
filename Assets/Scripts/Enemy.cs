@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
     }
 
     void die(){
+        Destroy(gameObject.GetComponent<Rigidbody2D>());
         float dtime = 0;
         gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY;
         ps.addPointsKill();
@@ -58,6 +59,7 @@ public class Enemy : MonoBehaviour
     // tint enemy red on hit
     IEnumerator RedOnHit(){
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;   // damaged
+
         yield return new WaitForSeconds(0.2f);
         
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal

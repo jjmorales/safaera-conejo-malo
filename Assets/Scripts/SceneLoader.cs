@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class SceneLoader : MonoBehaviour
 {
+
+    public float transitionTime;
+    public GameObject video;
 
     public void StartGame(){
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().Stop();
         GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Play();
 
-        SceneManager.LoadScene(1);
+        StartCoroutine("playTransition");
     }
     public void LoadLevel1(){
         SceneManager.LoadScene(1);
@@ -42,5 +46,22 @@ public class SceneLoader : MonoBehaviour
 
     public void Respawn(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void loadNext(){
+        StartCoroutine("playTransition");
+    }
+
+    IEnumerator playTransition(){
+        GameObject.FindGameObjectWithTag("Transition").GetComponent<VideoPlayer>().Play();
+        
+        if(GameObject.FindGameObjectWithTag("Player")) Destroy(GameObject.FindGameObjectWithTag("Player").gameObject);
+
+        yield return new WaitForSeconds(transitionTime);
+
+        int load = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if(load > 6) load = 0;
+        SceneManager.LoadScene(load);
     }
 }

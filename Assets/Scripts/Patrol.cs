@@ -9,22 +9,25 @@ public class Patrol : MonoBehaviour
     public Rigidbody2D rb;
     public float lastSeen;
     public float chaseSpeed;
-    public bool knockedBack = false;
     public Transform groundDetection;
+    public int thrust;
     
     // private vars
     Animator animator;
     bool movingRight = true;
     bool chase = false;
     bool inSight = false;
+    bool hit = false;
+
+    GameObject player;
 
     private void Start(){
         animator = this.gameObject.GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void FixedUpdate(){
-
-        if(!knockedBack){   // no chasing or mocement if knocked back
+        if(!hit){
             if(chase){  // chase character
                 rb.MovePosition((Vector2)transform.position + ((Vector2)transform.right * chaseSpeed * Time.deltaTime));
 
@@ -110,11 +113,6 @@ public class Patrol : MonoBehaviour
             }
     }
 
-    // no chasing or movement if knocked back
-    public void toggleKnockback(){
-        knockedBack = !knockedBack;
-    }
-
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.transform.tag == "PlayerAttack" || col.gameObject.transform.tag == "Player"){
             chase = true;
@@ -130,7 +128,19 @@ public class Patrol : MonoBehaviour
         if(col.gameObject.transform.tag == "PlayerAttack"){
             chase = true;
             lastSeen = Time.time;
+            StartCoroutine("stop");
         }
+    }
+
+    IEnumerator stop(){
+        hit = true;
+        chase = false;
+        Vector2 difference = player.transform.position - gameObject.transform.position;
+                difference = transform.right * - thrust;
+                rb.AddForce(difference, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.5f);
+
+        hit = false; 
     }    
 }
 

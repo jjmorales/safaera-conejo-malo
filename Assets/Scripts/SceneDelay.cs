@@ -17,6 +17,6 @@ public class SceneDelay : MonoBehaviour
     {
         yield return new WaitForSeconds(seconds);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>().loadNext();
     }
 }

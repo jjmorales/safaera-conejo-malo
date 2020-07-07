@@ -12,7 +12,21 @@ public class Player : MonoBehaviour
     HealthBar healthBar;
     bool immune = false;
     SceneLoader sceneLoader;
-    
+
+    void Update () 
+    {    
+        if(Input.GetKeyDown("escape"))     
+        {        
+            if (Time.timeScale == 1.0){
+                Time.timeScale = 0f;
+                GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Pause();
+            }  
+            else{
+                Time.timeScale = 1.0f;
+                GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Play();
+            }                
+        }
+    }
     
  
     // Start is called before the first frame update
@@ -44,7 +58,7 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
 
-        Sc;
+        sceneLoader.Respawn();
         
     }
 

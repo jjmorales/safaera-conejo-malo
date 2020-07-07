@@ -4978,8 +4978,6 @@ GameObject:
   - component: {fileID: 5683221720579040853}
   - component: {fileID: 4938555763034522882}
   - component: {fileID: 6722415778112823119}
-  - component: {fileID: 6151584722167668756}
-  - component: {fileID: 8246777762298009741}
   m_Layer: 0
   m_Name: bullet v1
   m_TagString: PlayerAttack
@@ -5127,33 +5125,7 @@ MonoBehaviour:
   rb: {fileID: 5683221720579040853}
   direction: Horz
   HitStop: 0
-  knockBack: 1
+  knockBack: 0
   isPlayer: 1
   particle: {fileID: 3685215531604259784, guid: 70637007a1f984ea78c400043eaefd70,
     type: 3}
---- !u!114 &6151584722167668756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8588373297888730831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eec5fc33981643c9a05fa2077907d40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8246777762298009741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8588373297888730831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e966f1ed3b40b453faaffe1a6614b75c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thrust: 10
-  knockbackTime: 0.1
