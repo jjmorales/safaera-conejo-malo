@@ -34,8 +34,8 @@ public class Player : MonoBehaviour
     {
         currHealth = maxHealth;
         
-        if(healthBarUI) healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
-        sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
+        if(healthBarUI && GameObject.FindGameObjectWithTag("HealthBar")) healthBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<HealthBar>();
+        if(GameObject.FindGameObjectWithTag("SceneLoader")) sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         ps = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();    // link score board
 
         if(healthBar) healthBar.setMaxHealth(maxHealth);
@@ -56,9 +56,9 @@ public class Player : MonoBehaviour
 
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 
-        yield return new WaitForSeconds(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
+        yield return new WaitForSeconds(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
 
-        sceneLoader.Respawn();
+        sceneLoader.LoadStartMenu();
         
     }
 

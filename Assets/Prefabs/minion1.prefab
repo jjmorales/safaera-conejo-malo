@@ -184,5 +184,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  AttackDamage: 20
+  AttackDamage: 0
   confetti: 0

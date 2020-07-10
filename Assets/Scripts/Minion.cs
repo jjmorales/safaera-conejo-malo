@@ -5,9 +5,12 @@ using UnityEngine;
 public class Minion : MonoBehaviour
 {
     public int speed;
+    public int damage;
     Transform player;
     Rigidbody2D rigidbody;
     LookAt2D look;
+
+
 
     bool chase = false;
 
@@ -39,7 +42,7 @@ public class Minion : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag == "Player"){
-            player.GetComponent<Player>().TakeDamage(5);
+            player.GetComponent<Player>().TakeDamage(damage);
         }
     }
 }

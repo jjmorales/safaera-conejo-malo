@@ -9,6 +9,27 @@ EditorBuildSettings:
     path: Assets/Scenes/game scenes/beta/start.unity
     guid: def22dc8382904eeabd806084dfe0e18
   - enabled: 1
+    path: Assets/Scenes/game scenes/beta/safari 1.unity
+    guid: 39430769fe2414a008586f8a9f9c3929
+  - enabled: 1
+    path: Assets/Scenes/game scenes/beta/tunnels 1.unity
+    guid: 9ca8ab79e961849259fbb698010bda61
+  - enabled: 1
+    path: Assets/Scenes/game scenes/beta/sky 1.unity
+    guid: 3437d542e66f54674bffb6a2767e22b3
+  - enabled: 1
+    path: Assets/Scenes/game scenes/beta/ocean 1.unity
+    guid: d2257dc702c1c44d5bf1ad8fbaa9ef32
+  - enabled: 1
+    path: Assets/Scenes/game scenes/beta/pyramids 1.unity
+    guid: fcace4749f1ab46b9af7db2dfa23c2e0
+  - enabled: 1
+    path: Assets/Scenes/game scenes/beta/credits.unity
+    guid: e992ea1934d044ee8b41dac36de81eb0
+  - enabled: 1
+    path: Assets/Scenes/game scenes/beta/levelSelect.unity
+    guid: 6e85c59fe51b4462ba2b85d235b25858
+  - enabled: 1
     path: Assets/Scenes/game scenes/beta/safari.unity
     guid: f4f7a329546dc4fd4b2750762280b5d2
   - enabled: 1
@@ -23,7 +44,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/game scenes/beta/pyramids.unity
     guid: 8f3146d32cb954873aa2db491006ac5a
-  - enabled: 1
-    path: Assets/Scenes/game scenes/credits.unity
-    guid: e992ea1934d044ee8b41dac36de81eb0
   m_configObjects: {}

@@ -66,8 +66,8 @@ public class Bullet : MonoBehaviour
         gameObject.GetComponent<CircleCollider2D>().enabled = false;    // remove collider
 
         if (transform.childCount > 0){
-            if(gameObject.transform.GetChild(0)) Destroy(gameObject.transform.GetChild(0).gameObject);
-            if(gameObject.transform.GetChild(1)) Destroy(gameObject.transform.GetChild(1).gameObject);
+            if(gameObject.transform.GetChild(0) != null) Destroy(gameObject.transform.GetChild(0).gameObject);
+            if(gameObject.transform.GetChild(1) != null) Destroy(gameObject.transform.GetChild(1).gameObject);
         }
 
         while(Time.timeScale != 1 || !knockBackDone){

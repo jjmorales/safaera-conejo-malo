@@ -22,7 +22,7 @@ public class Runner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
+        if(GameObject.FindGameObjectWithTag("SceneLoader")) sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         animator.SetFloat("Speed", 1);
     }

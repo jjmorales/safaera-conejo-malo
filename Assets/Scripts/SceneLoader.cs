@@ -54,7 +54,7 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator playTransition(){        
         
-        GameObject.FindGameObjectWithTag("Transition").GetComponent<VideoPlayer>().Play();
+        if(GameObject.FindGameObjectWithTag("Transition")) GameObject.FindGameObjectWithTag("Transition").GetComponent<VideoPlayer>().Play();
 
         if(GameObject.FindGameObjectWithTag("Player")) Destroy(GameObject.FindGameObjectWithTag("Player").gameObject);
 

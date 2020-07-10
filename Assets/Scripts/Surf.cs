@@ -16,11 +16,12 @@ public class Surf : MonoBehaviour
     float v;
     Rigidbody2D rb;
     SceneLoader sceneLoader;
+    bool dead = false;
 
 
     void Start(){
         rb = gameObject.GetComponent<Rigidbody2D>();
-        sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
+        if(GameObject.FindGameObjectWithTag("SceneLoader")) sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
         StartCoroutine("respawn");
     }
 
@@ -38,13 +39,21 @@ public class Surf : MonoBehaviour
             //splash animation
             Instantiate(splash, GameObject.FindGameObjectWithTag("Player").gameObject.transform.position, GameObject.FindGameObjectWithTag("Player").gameObject.transform.rotation);
 
-            GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().hit();
+            if(GameObject.FindGameObjectWithTag("HealthBar"))GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().hit();
 
-            if(GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().currentHealth == 0){
-                StartCoroutine("Die");
+            if(GameObject.FindGameObjectWithTag("HealthBar")){
+                if(GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().currentHealth == 0){
+                    StartCoroutine("Die");
+                    dead = true;
+                }else{
+                    if(!dead){
+                        StartCoroutine("respawn");
+                    }
+                }
             }else{
-            //flash coroutine
-            StartCoroutine("respawn");
+                if(!dead){
+                    StartCoroutine("respawn");
+                }
             }
         }
     }

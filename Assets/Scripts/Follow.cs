@@ -8,14 +8,20 @@ public class Follow : MonoBehaviour
     public float speed;
     public bool endGameCatch = false;
     public Animator animator;
-    int chaseIndex = 4;
+    public int chaseIndex;
+    int starter;
+
+    void Start(){
+        starter = chaseIndex;
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(chaseIndex > 4){
-            chaseIndex = 4;
+        Debug.Log(chaseIndex);
+        if(chaseIndex > starter){
+            chaseIndex = starter;
         }else if(chaseIndex < 0){
             chaseIndex = 0;
         }
@@ -30,7 +36,7 @@ public class Follow : MonoBehaviour
     }
 
     public void chaseReset(){
-        chaseIndex = 4;
+        chaseIndex = starter;
     }
 
     public void chaseInc(){

@@ -9,12 +9,12 @@ public class PassCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lifeBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>();
+        if(GameObject.FindGameObjectWithTag("HealthBar") != null) lifeBar = GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>();
     }
 
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag == "Enemy"){
-            lifeBar.hit();
+            if(lifeBar != null) lifeBar.hit();
         }
     }
 }

@@ -9,7 +9,7 @@ public class LifeBarBonus : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag == "Player"){
-            GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().heal();
+            if(GameObject.FindGameObjectWithTag("HealthBar")) GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().heal();
             Destroy(gameObject);
         }
     }

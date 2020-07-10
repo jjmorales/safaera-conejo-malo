@@ -22,8 +22,10 @@ public class FlightControls : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         movement.x = Input.GetAxisRaw("Horizontal");
         
-        if(GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().currentHealth == 0){
-            StartCoroutine("Die");
+        if(GameObject.FindGameObjectWithTag("HealthBar")){
+            if(GameObject.FindGameObjectWithTag("HealthBar").GetComponent<LifeBar>().currentHealth == 0){
+                StartCoroutine("Die");
+            }
         }
     }
 
