@@ -55,7 +55,6 @@
      <Compile Include="Assets\CodeMonkey\Utils\World_Bar.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\World_Mesh.cs" />
      <Compile Include="Assets\CodeMonkey\Utils\World_Sprite.cs" />
-     <Compile Include="Assets\Comet.cs" />
      <Compile Include="Assets\Scripts\BlasterShot.cs" />
      <Compile Include="Assets\Scripts\Bonus.cs" />
      <Compile Include="Assets\Scripts\Boost.cs" />
@@ -106,12 +105,14 @@
      <Compile Include="Assets\Scripts\Runner.cs" />
      <Compile Include="Assets\Scripts\SceneDelay.cs" />
      <Compile Include="Assets\Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\Scripts\SelfDestructTimer.cs" />
      <Compile Include="Assets\Scripts\Shark.cs" />
      <Compile Include="Assets\Scripts\ShipBehave.cs" />
      <Compile Include="Assets\Scripts\SideScroll.cs" />
      <Compile Include="Assets\Scripts\SpaceShipMovement.cs" />
      <Compile Include="Assets\Scripts\SquidBomb.cs" />
      <Compile Include="Assets\Scripts\Surf.cs" />
+     <Compile Include="Assets\Scripts\SwapSprite.cs" />
      <None Include="Assets\Fonts\press-start-2p-font\misc\FONTLOG-e017.txt" />
      <None Include="Assets\CodeMonkey\README.txt" />
      <None Include="Assets\Fonts\press-start-2p-font\misc\LICENSE-65f9.txt" />

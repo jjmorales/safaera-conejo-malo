@@ -76,7 +76,7 @@ public class CharacterController2D : MonoBehaviour
 			Debug.Log(colliders[i].gameObject.layer);
 			if (colliders[i].gameObject.layer == m_WhatIsGroundIntValue)
 			{
-				//if(animator) animator.SetBool("Jump", false);
+				if(animator) animator.SetBool("Jump", false);
 				m_Grounded = true;
 				// if (!wasGrounded) OnLandEvent.Invoke();
 			}

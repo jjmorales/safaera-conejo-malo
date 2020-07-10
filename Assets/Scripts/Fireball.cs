@@ -15,7 +15,7 @@ public class Fireball : MonoBehaviour
     {
         Destroy(gameObject, 6);
         rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.velocity = gameObject.transform.right * speed;
+        rigidbody.velocity = gameObject.transform.right * -speed;
     }
 
     // Update is called once per frame

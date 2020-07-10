@@ -12,16 +12,11 @@ public class RandomSpawn : MonoBehaviour
    
     void Update()
     {
-        if(Time.time > this.spawnTime)
+        if(Time.timeSinceLevelLoad > this.spawnTime)
         {
-            this.spawnTime = Time.time + (float)Random.Range(this.randomSpawnRange.x, this.randomSpawnRange.y);
+            this.spawnTime = Time.timeSinceLevelLoad + (float)Random.Range(this.randomSpawnRange.x, this.randomSpawnRange.y);
             Instantiate(spawnee, spawnPoint.position, spawnPoint.rotation);
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 }

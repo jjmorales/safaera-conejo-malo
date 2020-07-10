@@ -19,6 +19,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5285685136309065616, guid: 15723e0e6489446dab54eaa4305a1af8,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.22511816
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285685136309065616, guid: 15723e0e6489446dab54eaa4305a1af8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 15.021474
+      objectReference: {fileID: 0}
     - target: {fileID: 5285685136309065619, guid: 15723e0e6489446dab54eaa4305a1af8,
         type: 3}
       propertyPath: m_LinearDrag
@@ -42,12 +52,12 @@ PrefabInstance:
     - target: {fileID: 5285685136309065646, guid: 15723e0e6489446dab54eaa4305a1af8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.7653098
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5285685136309065646, guid: 15723e0e6489446dab54eaa4305a1af8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39963284
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5285685136309065646, guid: 15723e0e6489446dab54eaa4305a1af8,
         type: 3}
@@ -97,12 +107,17 @@ PrefabInstance:
     - target: {fileID: 5285685136309065646, guid: 15723e0e6489446dab54eaa4305a1af8,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.06
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 5285685136309065646, guid: 15723e0e6489446dab54eaa4305a1af8,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.06
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5285685136309065647, guid: 15723e0e6489446dab54eaa4305a1af8,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5285685136309065617, guid: 15723e0e6489446dab54eaa4305a1af8, type: 3}

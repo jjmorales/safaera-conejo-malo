@@ -44,7 +44,7 @@ public class BossBehave : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         look = GetComponent<LookAt2D>();
         bossHP = GameObject.FindGameObjectWithTag("BossHP").GetComponent<HealthBar>();
-        bossHP.setMaxHealth(500);
+        bossHP.setMaxHealth(1000);
         light = GameObject.FindGameObjectWithTag("Lights").GetComponent<Light2D>();
     }
 
@@ -54,16 +54,18 @@ public class BossBehave : MonoBehaviour
         int hp = enemy.getEnemyHealth();
         bossHP.setHealth(hp);
 
-        if(hp < 350 && hp >= 200){
+        if(hp < 700 && hp >= 500){
             // lighting flicker orange
             //gameObject.transform.localScale = new Vector3(10,10,10);
             stage1 = false;
             stage2 = true;
-        }else if(hp < 200 && hp > 0){
+            spawnOffset = new Vector2(3,8);
+        }else if(hp < 500 && hp > 0){
             // lighting flicker red
             //gameObject.transform.localScale = new Vector3(5,5,5);
             stage2 = false;
             stage3 = true;
+            spawnOffset = new Vector2(2,5);
         }else if(hp <= 0){
             chase = false;
             rigidbody.constraints = RigidbodyConstraints2D.FreezePositionY;
@@ -74,9 +76,9 @@ public class BossBehave : MonoBehaviour
     void FixedUpdate(){
         look.LookAtPlayer();
 
-        if(Time.time > this.fireTime){
+        if(Time.timeSinceLevelLoad > this.fireTime){
             // channel animation
-            this.fireTime = Time.time + (float)Random.Range(this.spawnOffset.x, this.spawnOffset.y);
+            this.fireTime = Time.timeSinceLevelLoad + (float)Random.Range(this.spawnOffset.x, this.spawnOffset.y);
 
             if(stage1){
                 StartCoroutine("attack1");
