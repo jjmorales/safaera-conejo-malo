@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 60
-  attackDamage: 5
+  attackDamage: 3
   rb: {fileID: 3713140047683280092}
   direction: Horz
   HitStop: 0

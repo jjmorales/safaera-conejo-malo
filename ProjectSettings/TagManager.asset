@@ -17,6 +17,7 @@ TagManager:
   - Music
   - Transition
   - Obstacle
+  - Button
   layers:
   - Default
   - TransparentFX

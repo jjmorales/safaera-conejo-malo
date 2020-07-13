@@ -10,6 +10,8 @@ public class Surf : MonoBehaviour
     public float speed = 40f;
     public GameObject spawnPoint;
     public GameObject splash;
+
+    bool spawning = true;
     
     
     float h;
@@ -18,17 +20,23 @@ public class Surf : MonoBehaviour
     SceneLoader sceneLoader;
     bool dead = false;
 
+    PointSystem point;
+
 
     void Start(){
         rb = gameObject.GetComponent<Rigidbody2D>();
         if(GameObject.FindGameObjectWithTag("SceneLoader")) sceneLoader = GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>();
+        point = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<PointSystem>();
         StartCoroutine("respawn");
+
     }
 
     void Update()
     {
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
+
+        if(spawning == false) point.customPoint(1);
 
     }
 
@@ -72,6 +80,9 @@ public class Surf : MonoBehaviour
     }
 
     public IEnumerator respawn(){
+
+        spawning = true;
+
         //spawn at top of map
         rb.position = spawnPoint.transform.position;
 
@@ -83,6 +94,8 @@ public class Surf : MonoBehaviour
         yield return new WaitForSeconds(2f);
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;   // back to normal
         rb.gravityScale = 2;
+
+        spawning = false;
     }
 
     

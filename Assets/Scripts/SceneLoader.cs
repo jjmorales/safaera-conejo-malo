@@ -53,7 +53,7 @@ public class SceneLoader : MonoBehaviour
     IEnumerator playTransition(){        
         
         if(gif) Instantiate(gif, center.transform.position, center.transform.rotation); 
-
+        
         if(GameObject.FindGameObjectWithTag("Player")) Destroy(GameObject.FindGameObjectWithTag("Player").gameObject);
 
         yield return new WaitForSeconds(transitionTime);
