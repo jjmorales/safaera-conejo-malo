@@ -34,7 +34,7 @@ public class FlightControls : MonoBehaviour
 
         yield return new WaitForSeconds(this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
 
-        GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>().LoadLevelSelection();
+        GameObject.FindGameObjectWithTag("SceneLoader").GetComponent<SceneLoader>().LoadStartMenu();
     }
 
     void FixedUpdate(){

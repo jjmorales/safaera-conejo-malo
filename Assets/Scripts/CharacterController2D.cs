@@ -73,7 +73,6 @@ public class CharacterController2D : MonoBehaviour
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			Debug.Log(colliders[i].gameObject.layer);
 			if (colliders[i].gameObject.layer == m_WhatIsGroundIntValue)
 			{
 				if(animator) animator.SetBool("Jump", false);
@@ -85,7 +84,6 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Update(){
 
-		Debug.Log(m_Grounded);
 
 		if(m_Rigidbody2D.velocity.y < 0){
 			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;

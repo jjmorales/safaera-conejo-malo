@@ -12,7 +12,6 @@ public class Portal : MonoBehaviour
             animator.SetTrigger("enterPortal");
             Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
             StartCoroutine(col.GetComponent<Player>().Die());
-            Debug.Log(Time.time);
         }
     }
 }

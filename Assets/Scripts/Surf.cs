@@ -68,7 +68,7 @@ public class Surf : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
-        sceneLoader.LoadLevelSelection();
+        sceneLoader.LoadStartMenu();
     }
 
     public IEnumerator respawn(){
