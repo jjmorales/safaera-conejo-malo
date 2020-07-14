@@ -11,7 +11,7 @@ public class MoveLeft : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
-        Destroy(gameObject, 15);
+        Destroy(gameObject, 30);
     }
 
     // Update is called once per frame
