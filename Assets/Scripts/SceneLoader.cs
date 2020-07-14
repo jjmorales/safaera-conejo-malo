@@ -12,7 +12,6 @@ public class SceneLoader : MonoBehaviour
     public GameObject center;
 
     public void StartGame(){
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().Stop();
         GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().volume = 1;
         GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Play();
 
