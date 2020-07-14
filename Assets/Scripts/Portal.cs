@@ -10,7 +10,6 @@ public class Portal : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag == "Player"){
             animator.SetTrigger("enterPortal");
-            Destroy (gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
             StartCoroutine(col.GetComponent<Player>().Die());
         }
     }
